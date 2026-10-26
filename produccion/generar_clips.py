@@ -31,7 +31,7 @@ FPS, DUR = 24, 10
 FUENTES = {
     "lago":    ("ref-costanera-lago.webp",  (0, 400, 1396, 785),  "subir"),
     "ascenso": ("ref-cordada-ascenso.webp", (0, 60, 1082, 609),   "subir"),
-    "crater":  ("ref-crater-aereo.webp",    (0, 90, 1900, 1069),  "entrar"),
+    "crater":  ("ref-crater-aereo.webp",    (300, 330, 1600, 900), "entrar"),
     "base":    ("ref-cono-atardecer.webp",  (0, 150, 1318, 741),  "alejar"),
 }
 

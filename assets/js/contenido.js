@@ -93,8 +93,8 @@ window.TV_CONTENIDO = {
       "copy": {
         "es": {
           "eyebrow": "2.847 m · La cumbre",
-          "title": "Arriba se acaba la nieve.",
-          "body": "El cráter es ceniza, azufre y una fumarola que no para. Te asomas, respiras eso, y después bajas deslizando por la nieve.",
+          "title": "Te asomas al cráter.",
+          "body": "Seis horas de nieve para llegar al borde y mirar dentro. Abajo humea. Y después se baja deslizando.",
           "tags": [
             "Fumarola activa",
             "El descenso deslizando"
@@ -102,8 +102,8 @@ window.TV_CONTENIDO = {
         },
         "en": {
           "eyebrow": "2,847 m · The summit",
-          "title": "The snow ends up here.",
-          "body": "The crater is ash, sulphur and a fumarole that never stops. You look in, you breathe it, and then you slide back down the snow.",
+          "title": "You look into the crater.",
+          "body": "Six hours on snow to reach the rim and look in. It steams down there. And then you slide back down.",
           "tags": [
             "Active fumarole",
             "The slide down"
