@@ -7,17 +7,18 @@
 
 window.TV_TEXTOS = {
   es: {
-    "aviso.html": "<b>Prototipo.</b> Las imágenes y el vuelo son placeholders generados sin costo. Precios y datos están por confirmar con Terra Volcano.",
+    "aviso.html": "<b>Prototipo.</b> Las fotos son referencias <b>pendientes de licencia</b> y los precios están por confirmar con Terra Volcano. No publicar así.",
 
     "exigencia.cejilla": "Antes de reservar",
     "exigencia.titulo": "¿Puedo hacerlo?",
+    "exigencia.subtabla": "El catálogo completo. El vuelo de arriba es el Villarrica, que es el que casi todos vienen a subir.",
     "exigencia.sub": "La pregunta real no es cuánto cuesta, es si vas a poder. Acá está la exigencia sin adornos. Si no te calza, mejor saberlo ahora: subimos con un guía cada tres personas y preferimos que llegues arriba.",
     "exigencia.th1": "Expedición", "exigencia.th2": "Duración",
     "exigencia.th3": "Desnivel", "exigencia.th4": "Exigencia",
 
     "guia.cejilla": "Quién te sube",
     "guia.titulo": "Richard Díaz",
-    "guia.foto": "Foto de Richard guiando\n(pendiente — pedirla en alta resolución)",
+    "guia.foto": "Falta la foto de Richard guiando — pedirla en alta resolución",
     "guia.p1": "Once años guiando en estos cerros. Dueño y guía principal de Terra Volcano, acreditado por la Municipalidad de Pucón.",
     "guia.p2": "Lo que más repiten quienes suben con él no es el paisaje: es el ritmo. Que nadie se queda atrás, que el grupo llega completo, y que cuando alguien flaquea en el tramo final hay una mano.",
     "guia.credenciales": [
@@ -42,17 +43,18 @@ window.TV_TEXTOS = {
   },
 
   en: {
-    "aviso.html": "<b>Prototype.</b> The imagery and the flight are zero-cost placeholders. Prices and details are still to be confirmed with Terra Volcano.",
+    "aviso.html": "<b>Prototype.</b> The photos are references <b>pending licensing</b> and prices are unconfirmed. Not for publication as is.",
 
     "exigencia.cejilla": "Before you book",
     "exigencia.titulo": "Can I actually do this?",
+    "exigencia.subtabla": "The full catalogue. The flight above is Villarrica, which is what almost everyone comes to climb.",
     "exigencia.sub": "The real question isn't the price, it's whether you'll make it. Here's what each climb demands, with nothing dressed up. If it doesn't fit you, better to know now: we climb one guide per three people, and we'd rather you reach the top.",
     "exigencia.th1": "Expedition", "exigencia.th2": "Duration",
     "exigencia.th3": "Ascent", "exigencia.th4": "Difficulty",
 
     "guia.cejilla": "Who takes you up",
     "guia.titulo": "Richard Díaz",
-    "guia.foto": "Photo of Richard guiding\n(pending — request in high resolution)",
+    "guia.foto": "Missing: a photo of Richard guiding — request in high resolution",
     "guia.p1": "Eleven years guiding these mountains. Owner and lead guide of Terra Volcano, accredited by the Municipality of Pucón.",
     "guia.p2": "What climbers repeat isn't the view, it's the pace. Nobody gets left behind, the group arrives whole, and when someone falters on the last stretch there's a hand.",
     "guia.credenciales": [
@@ -77,16 +79,19 @@ window.TV_TEXTOS = {
   }
 };
 
-/* Filas de la tabla de exigencia. Cifras [POR CONFIRMAR] con Richard. */
+/* Tabla de exigencia: acá vive el catálogo completo. El vuelo de arriba es
+   solo el Villarrica, que es lo que vende; los otros cuatro volcanes se listan
+   aquí en texto, que cuesta $0 y se actualiza sin re-renderizar nada.
+   Cifras [POR CONFIRMAR] con Richard. */
 window.TV_EXIGENCIA = [
-  { id:"villarrica",   dur:{es:"6 a 8 h",   en:"6 to 8 h"},   desnivel:"~1.400 m", nivel:3,
-    label:{es:"Exigente",  en:"Demanding"} },
-  { id:"quetrupillan", dur:{es:"Día completo", en:"Full day"}, desnivel:"~1.100 m", nivel:2,
-    label:{es:"Moderada",  en:"Moderate"} },
-  { id:"lanin",        dur:{es:"2 a 3 días", en:"2 to 3 days"}, desnivel:"~2.000 m", nivel:3,
+  { nombre:"Villarrica",       dur:{es:"6 a 8 h",      en:"6 to 8 h"},     desnivel:"~1.400 m", nivel:3,
+    label:{es:"Exigente",   en:"Demanding"} },
+  { nombre:"Quetrupillán",     dur:{es:"Día completo", en:"Full day"},     desnivel:"~1.100 m", nivel:2,
+    label:{es:"Moderada",   en:"Moderate"} },
+  { nombre:"Lanín",            dur:{es:"2 a 3 días",   en:"2 to 3 days"},  desnivel:"~2.000 m", nivel:3,
     label:{es:"Expedición", en:"Expedition"} },
-  { id:"sollipulli",   dur:{es:"Día completo", en:"Full day"}, desnivel:"~900 m",   nivel:2,
-    label:{es:"Moderada",  en:"Moderate"} },
-  { id:"mocho",        dur:{es:"Día completo", en:"Full day"}, desnivel:"~1.200 m", nivel:2,
-    label:{es:"Moderada",  en:"Moderate"} }
+  { nombre:"Sollipulli",       dur:{es:"Día completo", en:"Full day"},     desnivel:"~900 m",   nivel:2,
+    label:{es:"Moderada",   en:"Moderate"} },
+  { nombre:"Mocho-Choshuenco", dur:{es:"Día completo", en:"Full day"},     desnivel:"~1.200 m", nivel:2,
+    label:{es:"Moderada",   en:"Moderate"} }
 ];

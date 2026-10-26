@@ -2,183 +2,121 @@
 window.TV_CONTENIDO = {
   "marca": {
     "es": {
-      "hint": "scroll para volar",
+      "hint": "scroll para subir",
       "tagline": "Expediciones en la Araucanía andina"
     },
     "en": {
-      "hint": "scroll to fly in",
+      "hint": "scroll to climb",
       "tagline": "Expeditions in the Andean Araucanía"
     }
   },
   "secciones": [
     {
-      "id": "villarrica",
-      "accent": "#D64A1E",
-      "scroll": 1.7,
-      "linger": 0.45,
-      "still": "assets/stills/villarrica.png",
-      "clip": "assets/vid/villarrica.mp4",
+      "id": "lago",
+      "accent": "#3A7CA5",
+      "scroll": 1.6,
+      "linger": 0.42,
+      "still": "assets/stills/lago.jpg",
+      "clip": "assets/vid/lago.mp4",
       "label": {
-        "es": "Villarrica",
-        "en": "Villarrica"
+        "es": "El lago",
+        "en": "The lake"
       },
       "copy": {
         "es": {
-          "eyebrow": "2.847 m · 6 a 8 horas",
+          "eyebrow": "Pucón · 2.847 m",
           "title": "El volcán que todavía respira.",
-          "body": "Uno de los más activos de Sudamérica. Subes con crampones y piolet, te asomas al cráter, y bajas deslizando por la nieve.",
+          "body": "Lo ves desde la costanera, blanco y entero. En seis horas vas a estar mirando dentro del cráter.",
           "tags": [
             "1 guía cada 3",
             "Equipo incluido",
-            "Desde Pucón"
+            "Salida al amanecer"
           ]
         },
         "en": {
-          "eyebrow": "2,847 m · 6 to 8 hours",
+          "eyebrow": "Pucón · 2,847 m",
           "title": "The volcano that still breathes.",
-          "body": "One of South America's most active. You climb it with crampons and ice axe, look into the crater, and slide back down the snow.",
+          "body": "You see it from the lakefront, white and whole. In six hours you'll be looking down into its crater.",
           "tags": [
             "1 guide per 3",
             "Gear included",
-            "From Pucón"
+            "Dawn departure"
           ]
         }
       }
     },
     {
-      "id": "quetrupillan",
-      "accent": "#E8B33C",
-      "scroll": 1.3,
-      "linger": 0.3,
-      "still": "assets/stills/quetrupillan.png",
-      "clip": "assets/vid/quetrupillan.mp4",
-      "label": {
-        "es": "Quetrupillán",
-        "en": "Quetrupillán"
-      },
-      "copy": {
-        "es": {
-          "eyebrow": "2.360 m · Día completo",
-          "title": "El vecino sin fila.",
-          "body": "Entre el Villarrica y el Lanín, casi nadie lo sube. Mismo territorio, la mitad de la gente.",
-          "tags": [
-            "Grupos pequeños",
-            "Sin multitudes"
-          ]
-        },
-        "en": {
-          "eyebrow": "2,360 m · Full day",
-          "title": "The one without the queue.",
-          "body": "Between Villarrica and Lanín, and almost nobody climbs it. Same terrain, half the people.",
-          "tags": [
-            "Small groups",
-            "No crowds"
-          ]
-        }
-      }
-    },
-    {
-      "id": "lanin",
-      "accent": "#2F5D4A",
-      "scroll": 1.5,
-      "linger": 0.4,
-      "still": "assets/stills/lanin.png",
-      "clip": "assets/vid/lanin.mp4",
-      "label": {
-        "es": "Lanín",
-        "en": "Lanín"
-      },
-      "copy": {
-        "es": {
-          "eyebrow": "3.776 m · 2 a 3 días",
-          "title": "El grande.",
-          "body": "El cono perfecto de la frontera. Se sube en dos o tres días, durmiendo arriba entre araucarias.",
-          "tags": [
-            "Expedición",
-            "Campamento de altura"
-          ]
-        },
-        "en": {
-          "eyebrow": "3,776 m · 2 to 3 days",
-          "title": "The big one.",
-          "body": "The perfect cone on the border. Two or three days, sleeping high up among the araucarias.",
-          "tags": [
-            "Expedition",
-            "High camp"
-          ]
-        }
-      }
-    },
-    {
-      "id": "sollipulli",
-      "accent": "#3A7CA5",
-      "scroll": 1.5,
-      "linger": 0.45,
-      "still": "assets/stills/sollipulli.png",
-      "clip": "assets/vid/sollipulli.mp4",
-      "label": {
-        "es": "Sollipulli",
-        "en": "Sollipulli"
-      },
-      "copy": {
-        "es": {
-          "eyebrow": "2.282 m · Día completo",
-          "title": "Un cráter lleno de hielo.",
-          "body": "Una caldera de cuatro kilómetros con un glaciar adentro. No se parece a nada más en la zona.",
-          "tags": [
-            "Glaciar",
-            "Caldera"
-          ]
-        },
-        "en": {
-          "eyebrow": "2,282 m · Full day",
-          "title": "A crater full of ice.",
-          "body": "A four-kilometre caldera with a glacier sitting inside it. There is nothing else like it around here.",
-          "tags": [
-            "Glacier",
-            "Caldera"
-          ]
-        }
-      }
-    },
-    {
-      "id": "mocho",
+      "id": "ascenso",
       "accent": "#F2EDE6",
-      "scroll": 1.3,
-      "linger": 0.3,
-      "still": "assets/stills/mocho.png",
-      "clip": "assets/vid/mocho.mp4",
+      "scroll": 1.6,
+      "linger": 0.4,
+      "still": "assets/stills/ascenso.jpg",
+      "clip": "assets/vid/ascenso.mp4",
       "label": {
-        "es": "Mocho-Choshuenco",
-        "en": "Mocho-Choshuenco"
+        "es": "El ascenso",
+        "en": "The climb"
       },
       "copy": {
         "es": {
-          "eyebrow": "2.422 m · Día completo",
-          "title": "Dos cumbres, un glaciar.",
-          "body": "El más remoto del catálogo. Selva valdiviana abajo, casquete de hielo arriba.",
+          "eyebrow": "Cuatro horas de nieve",
+          "title": "Se sube con crampones y piolet.",
+          "body": "Un guía cada tres personas. El ritmo lo pone el grupo, no el reloj: nadie se queda atrás.",
           "tags": [
-            "Remoto",
-            "Selva valdiviana"
+            "~1.400 m de desnivel",
+            "Exigente",
+            "Crampones y piolet"
           ]
         },
         "en": {
-          "eyebrow": "2,422 m · Full day",
-          "title": "Two summits, one glacier.",
-          "body": "The remotest in the catalogue. Valdivian rainforest below, an ice cap on top.",
+          "eyebrow": "Four hours on snow",
+          "title": "Crampons and an ice axe.",
+          "body": "One guide per three climbers. The group sets the pace, not the clock — nobody gets left behind.",
           "tags": [
-            "Remote",
-            "Rainforest"
+            "~1,400 m ascent",
+            "Demanding",
+            "Crampons and ice axe"
+          ]
+        }
+      }
+    },
+    {
+      "id": "crater",
+      "accent": "#D64A1E",
+      "scroll": 1.8,
+      "linger": 0.48,
+      "still": "assets/stills/crater.jpg",
+      "clip": "assets/vid/crater.mp4",
+      "label": {
+        "es": "El cráter",
+        "en": "The crater"
+      },
+      "copy": {
+        "es": {
+          "eyebrow": "2.847 m · La cumbre",
+          "title": "Arriba se acaba la nieve.",
+          "body": "El cráter es ceniza, azufre y una fumarola que no para. Te asomas, respiras eso, y después bajas deslizando por la nieve.",
+          "tags": [
+            "Fumarola activa",
+            "El descenso deslizando"
+          ]
+        },
+        "en": {
+          "eyebrow": "2,847 m · The summit",
+          "title": "The snow ends up here.",
+          "body": "The crater is ash, sulphur and a fumarole that never stops. You look in, you breathe it, and then you slide back down the snow.",
+          "tags": [
+            "Active fumarole",
+            "The slide down"
           ]
         }
       }
     },
     {
       "id": "base",
-      "accent": "#D64A1E",
+      "accent": "#E8B33C",
       "scroll": 1.9,
       "linger": 0.5,
-      "still": "assets/stills/base.png",
+      "still": "assets/stills/base.jpg",
       "clip": "assets/vid/base.mp4",
       "label": {
         "es": "Reservar",
@@ -200,8 +138,8 @@ window.TV_CONTENIDO = {
               "href": "#CONFIRMAR-WHATSAPP"
             },
             "secondary": {
-              "label": "Ver los tours",
-              "href": "#villarrica"
+              "label": "¿Puedo hacerlo?",
+              "href": "#exigencia"
             }
           }
         },
@@ -220,21 +158,15 @@ window.TV_CONTENIDO = {
               "href": "#CONFIRMAR-WHATSAPP"
             },
             "secondary": {
-              "label": "See the tours",
-              "href": "#villarrica"
+              "label": "Can I do this?",
+              "href": "#exigencia"
             }
           }
         }
       }
     }
   ],
-  "conectores": [
-    "assets/vid/conector-0.mp4",
-    "assets/vid/conector-1.mp4",
-    "assets/vid/conector-2.mp4",
-    "assets/vid/conector-3.mp4",
-    "assets/vid/conector-4.mp4"
-  ],
+  "conectores": [],
   "paleta": {
     "obsidiana": "#14110F",
     "lava": "#D64A1E",

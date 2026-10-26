@@ -43,11 +43,9 @@
   // --- tabla de exigencia ---------------------------------------------------
   var tb = document.getElementById('filas-exigencia');
   if (tb) {
-    var nombre = {};
-    CONT.secciones.forEach(function (s) { nombre[s.id] = s.label[L]; });
     window.TV_EXIGENCIA.forEach(function (f) {
       var tr = document.createElement('tr');
-      [nombre[f.id] || f.id, f.dur[L], f.desnivel].forEach(function (v) {
+      [f.nombre, f.dur[L], f.desnivel].forEach(function (v) {
         var td = document.createElement('td'); td.textContent = v; tr.appendChild(td);
       });
       var td = document.createElement('td');
@@ -79,8 +77,12 @@
   mountScrollWorld(document.getElementById('world'), {
     brand: { name: 'Terra Volcano', href: '#top' },
     hint: CONT.marca[L].hint,
-    diveScroll: 1.4,
+    diveScroll: 1.6,
     connScroll: 0.9,
+    /* Arquitectura A: sin conectores, los tramos SON el recorrido. Las costuras
+       son cortes entre fotografías distintas, así que el disolvimiento va más
+       ancho que el 0.12 por defecto; con menos se ve el corte seco. */
+    crossfade: 0.26,
     nav: true,
     atmosphere: true,
     sections: secciones,

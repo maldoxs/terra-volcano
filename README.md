@@ -7,22 +7,35 @@ miniatura, sin cortes: **el vuelo es el catálogo**.
 
 Construido con la skill [`oso95/scroll-world`](https://github.com/oso95/scroll-world) (MIT).
 
-## Estado: prototipo, costo cero
+## Estado: prototipo con fotografía real, costo cero
 
-Todo lo que hay acá se armó **sin gastar un peso en generación**. Las imágenes y
-los clips son placeholders dibujados con PIL y ffmpeg, marcados como tales en la
-propia imagen. Sirven para una cosa concreta: dejar el motor funcionando y el
-guion evaluable **antes** de pagar por el render real.
+El vuelo recorre **el ascenso al Villarrica en 4 escenas**: el lago y Pucón, la
+cordada en la nieve, el cráter con su fumarola, y el cierre al atardecer con el
+CTA. El scroll *es* subir el cerro.
+
+No hay nada generado con AI. Cada escena es una fotografía real con un
+movimiento de cámara lento aplicado con ffmpeg, que el motor scrubea según el
+scroll — la misma técnica de las páginas scroll-through de Apple. Costo de
+generación: **cero**.
+
+> ⚠️ **Las fotos no son de Terra Volcano y están pendientes de licencia.**
+> Ver [`LICENCIAS-PENDIENTES.md`](LICENCIAS-PENDIENTES.md). El sitio no se
+> publica hasta resolver eso.
+
+Los otros cuatro volcanes del catálogo (Quetrupillán, Lanín, Sollipulli,
+Mocho-Choshuenco) viven en la tabla de exigencia, en texto. Cuestan $0 y se
+actualizan sin re-renderizar nada.
 
 | | Estado |
 |---|---|
-| Guion de 6 escenas (un volcán cada una) | ✅ |
+| Guion de 4 escenas (el ascenso al Villarrica) | ✅ |
 | Brand kit y paleta | ✅ borrador, por validar con el cliente |
 | 17 prompts listos para generar | ✅ |
 | Motor de scroll cableado y verificado | ✅ |
 | Secciones de conversión (exigencia, guía, reserva) | ✅ copy con datos por confirmar |
 | Bilingüe ES/EN | ✅ |
-| Stills y clips reales | ⬜ pendiente de presupuesto |
+| Clips desde fotografía real | ✅ 1280×720, sin costo |
+| Metraje de drone propio y licenciado | ⬜ lo que falta de verdad |
 | Versión móvil nativa 9:16 | ⬜ opcional, duplica el costo de video |
 
 ## Estructura
@@ -36,8 +49,9 @@ assets/js/sitio.js             arranque: idioma, montaje, tablas
 assets/stills/                 posters por escena (placeholder)
 assets/vid/                    6 inmersiones + 5 conectores (placeholder)
 produccion/escenas.py          FUENTE ÚNICA de escenas → prompts + contenido.js
-produccion/generar_placeholders.py   dibuja los placeholders con PIL + ffmpeg
-produccion/prompts/            los 17 prompts para Higgsfield / Monid
+produccion/generar_clips.py    convierte las fotos en los clips del vuelo
+produccion/referencias/        las fotos de origen (pendientes de licencia)
+produccion/prompts/            prompts, por si algún día se genera con AI
 produccion/brand-kit.md        paleta, tono y style preamble
 produccion/analisis-competitivo.md   por qué el sitio está armado así
 produccion/knockout.py         recorte de fondo (de la skill), opcional
@@ -47,7 +61,7 @@ produccion/knockout.py         recorte de fondo (de la skill), opcional
 
 ```bash
 python3 produccion/escenas.py              # tras editar escenas o copy del vuelo
-python3 produccion/generar_placeholders.py # tras cambiar las escenas
+python3 produccion/generar_clips.py        # tras cambiar fotos o recortes
 python3 -m http.server 8777                # y abrir http://127.0.0.1:8777
 ```
 

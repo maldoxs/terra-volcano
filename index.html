@@ -68,10 +68,12 @@
   .n3 { background:rgba(214,74,30,.14); color:var(--lava); }
 
   .guia { display:grid; grid-template-columns:minmax(0,320px) minmax(0,1fr); gap:44px; align-items:start; }
-  .retrato { aspect-ratio:4/5; border-radius:3px; background:
-      linear-gradient(145deg, rgba(20,17,15,.1), rgba(20,17,15,.3));
-      display:grid; place-items:center; text-align:center; padding:24px;
-      color:var(--sw-ink-soft); font-size:13px; line-height:1.6; }
+  .retrato { margin:0; }
+  .retrato img { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:3px; display:block; }
+  .retrato figcaption { margin-top:10px; font-size:12px; line-height:1.5;
+                        color:var(--sw-ink-soft); }
+  .banda { margin:0; }
+  .banda img { width:100%; max-height:62vh; object-fit:cover; display:block; }
   .guia p { font-size:17px; line-height:1.65; margin:0 0 18px; max-width:60ch; }
   .credenciales { list-style:none; padding:0; margin:26px 0 0; display:grid; gap:12px; }
   .credenciales li { padding-left:26px; position:relative; font-size:15px; line-height:1.5; }
@@ -119,15 +121,23 @@
   <p class="cejilla" data-t="exigencia.cejilla"></p>
   <h2 data-t="exigencia.titulo"></h2>
   <p class="sub" data-t="exigencia.sub"></p>
+  <p class="cejilla" style="margin-top:46px" data-t="exigencia.subtabla"></p>
   <table class="exigencia"><thead><tr>
     <th data-t="exigencia.th1"></th><th data-t="exigencia.th2"></th>
     <th data-t="exigencia.th3"></th><th data-t="exigencia.th4"></th>
   </tr></thead><tbody id="filas-exigencia"></tbody></table>
 </section>
 
+<figure class="banda">
+  <img src="assets/fotos/fumarola.jpg" alt="El Villarrica desde el aire, con su fumarola" />
+</figure>
+
 <section class="bloque" id="guia">
   <div class="guia">
-    <div class="retrato" data-t="guia.foto"></div>
+    <figure class="retrato">
+        <img src="assets/fotos/centro-esqui.jpg" alt="Base del volcán Villarrica" />
+        <figcaption data-t="guia.foto"></figcaption>
+      </figure>
     <div>
       <p class="cejilla" data-t="guia.cejilla"></p>
       <h2 data-t="guia.titulo"></h2>
