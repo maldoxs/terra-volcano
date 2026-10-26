@@ -145,13 +145,52 @@ auditoría ya armado. Cuesta por firma, pero quita responsabilidad técnica.
 
 Hoy tienen Instagram y web. Falta:
 
-### ❌ Google Business Profile — lo más urgente de esta lista
-Cuando alguien en Pucón busca "agencia volcán Villarrica" en Google Maps,
-**ahí se decide la venta**. Es gratis, y pesa más que Tripadvisor para la
-búsqueda local. Necesitan: ficha reclamada, fotos, horario, link directo a
-WhatsApp, preguntas respondidas y **pedir reseñas de Google sistemáticamente**.
+### ⚠️ Google Business Profile — existe y está bien, le faltan cinco cosas
 
-Si solo se hace una cosa de todo este documento, es esta.
+**Corrección sobre la primera versión de este documento: sí lo tienen, y es
+bueno.** Verificado el 2026-10-26: **4,8 ★ con 141 opiniones**, fotos, video,
+horario, dirección, teléfono y servicios listados. Es un activo real.
+
+Lo que le falta, en orden de impacto:
+
+1. **No hay botón de "Reservar".** El panel ofrece Sitio web, Cómo llegar,
+   Guardar, Compartir y Llamar — ninguno lleva a reservar. Google permite
+   agregar un enlace de reserva. Es un camino de conversión gratis que no
+   están usando.
+2. **No hay productos con precio.** Google deja publicar servicios **con
+   precio**. Dado que el sitio no muestra ninguno, esta es la vía más rápida y
+   gratuita de dejar de mandar a la gente a la OTA a averiguar cuánto cuesta.
+3. **Los servicios listados están mal.** Dice "Visitas guiadas de la ciudad",
+   que ellos no hacen. Deberían decir lo real: Ascenso al Villarrica, Ski
+   touring, Lanín 2 días, Rafting, Trekking.
+4. **No hay publicaciones.** Google Posts permite publicar semanalmente estado
+   del cerro, cupos disponibles, ofertas de temporada baja. Mejora el
+   posicionamiento local y es gratis.
+5. **No hay preguntas y respuestas sembradas.** Pueden publicar y responder
+   sus propias preguntas frecuentes: ¿es difícil?, ¿qué pasa si cancela el
+   clima?, ¿necesito experiencia?
+
+Y un punto a revisar: el perfil marcaba **"Cerrado · Abre a las 9 a.m. del
+martes"** un lunes. 🔎 Confirmar si de verdad cierran los lunes en temporada o
+si el horario está mal cargado. Si es real, el QR de la vitrina y el WhatsApp
+dejan de ser un lujo.
+
+### 🆕 Terra Volcano Hostel — el activo que nadie está cruzando
+
+En la misma búsqueda aparece **Terra Volcano Hostel**, 5,0 ★ con 9 opiniones,
+en C. Flores 7, **con el mismo teléfono que la agencia**.
+
+Tienen alojamiento y agencia, y no se están cruzando:
+
+- **Paquete cama + ascenso.** El que sube el Villarrica necesita dormir en
+  Pucón la noche antes, y sale a las 6 de la mañana. Es el cross-sell más
+  natural que existe.
+- Del hostal al tour: todo huésped es un cliente potencial del ascenso.
+- Del tour al hostal: todo pasajero necesita dónde dormir.
+- El hostal tiene **solo 9 opiniones contra 141 de la agencia**. La máquina de
+  reseñas que ya funciona en una debería alimentar la otra.
+- Y resuelve el problema del formulario: el pasajero que duerme ahí puede
+  llenarlo y firmarlo la noche anterior, tranquilo, en recepción.
 
 ### ❌ WhatsApp Business
 Catálogo de tours con precios, respuestas rápidas, mensaje de ausencia,
@@ -193,8 +232,9 @@ La base de datos sin un canal para hablarle no sirve de nada.
 
 ## 6. Prioridad, si hubiera que elegir cinco
 
-1. **Google Business Profile** optimizado y pidiendo reseñas
-2. **Precios visibles** en el sitio, en texto indexable
+1. **Precios visibles**: en Google Business primero (gratis, hoy mismo) y en
+   el sitio en texto indexable
+2. **Botón de reservar en Google Business** y servicios corregidos
 3. **Formulario digital con firma** (reemplaza el papel y habilita la base de datos)
 4. **WhatsApp como camino de reserva**, con botón flotante y mensaje precargado
 5. **Una página por tour**, en español e inglés, con exigencia y qué incluye
