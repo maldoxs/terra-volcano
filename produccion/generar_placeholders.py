@@ -95,18 +95,43 @@ def dibujar(esc, idx):
 
     vid = esc["id"]
     if vid == "villarrica":
-        cono(d, cx, suelo - 10, 290, 430, roca, nieve, plano=0.09)
-        for i in range(7):                                   # cordada
-            t = i / 6
-            d.ellipse([cx - 120 + t * 95 - 7, suelo - 60 - t * 330 - 7,
-                       cx - 120 + t * 95 + 7, suelo - 60 - t * 330 + 7], fill=lava)
-        d.polygon([(cx - 26, suelo - 442), (cx + 26, suelo - 442),
-                   (cx + 16, suelo - 418), (cx - 16, suelo - 418)], fill=lava)
-        for i in range(5):                                   # fumarola
-            r = 26 + i * 15
-            y = suelo - 470 - i * 58
-            d.ellipse([cx - r + i * 11, y - r * 0.5, cx + r + i * 11, y + r * 0.5],
-                      fill=mezcla(PALETA["nieve"], PALETA["obsidiana"], 0.09 - i * 0.015))
+        # El Villarrica no es un cono puntiagudo: la cumbre está achatada por el
+        # cráter abierto, y el tercio superior lo cubre un glaciar con lenguas
+        # que bajan por las canaletas. Y se reconoce tanto por el lago y Pucón a
+        # sus pies como por el cerro mismo.
+        cono(d, cx, suelo - 10, 300, 420, roca, plano=0.17)
+        cima_y = suelo - 430
+        # Casquete glaciar sobre el tercio superior
+        gw = 300 * 0.17 + (300 - 300 * 0.17) * 0.36
+        d.polygon([(cx - gw, cima_y + 150), (cx - 51, cima_y), (cx + 51, cima_y),
+                   (cx + gw, cima_y + 150)], fill=nieve)
+        # Lenguas de hielo bajando por las canaletas
+        for k in (-0.72, -0.3, 0.12, 0.56):
+            xa = cx + gw * k
+            d.polygon([(xa - 16, cima_y + 150), (xa + 16, cima_y + 150),
+                       (xa + 9, cima_y + 150 + 120 + abs(k) * 40),
+                       (xa - 9, cima_y + 150 + 120 + abs(k) * 40)], fill=nieve)
+        # Cráter abierto con el resplandor
+        d.polygon([(cx - 51, cima_y), (cx + 51, cima_y),
+                   (cx + 34, cima_y + 26), (cx - 34, cima_y + 26)], fill=lava)
+        for i_ in range(6):                                  # cordada en la nieve
+            t = i_ / 5
+            d.ellipse([cx - 108 + t * 78 - 7, suelo - 90 - t * 300 - 7,
+                       cx - 108 + t * 78 + 7, suelo - 90 - t * 300 + 7], fill=lava)
+        for i_ in range(5):                                  # fumarola
+            r = 26 + i_ * 15
+            y = cima_y - 40 - i_ * 58
+            d.ellipse([cx - r + i_ * 11, y - r * 0.5, cx + r + i_ * 11, y + r * 0.5],
+                      fill=mezcla(PALETA["nieve"], PALETA["obsidiana"], 0.09 - i_ * 0.015))
+        # El lago a sus pies, con Pucón en la orilla: la postal reconocible
+        d.ellipse([cx - 470, suelo + 18, cx - 30, suelo + 104], fill=lago)
+        d.rectangle([cx - 300, suelo + 40, cx - 190, suelo + 50], fill=obs)   # muelle
+        for i_, x in enumerate(range(-460, -300, 46)):                        # casas
+            d.rectangle([cx + x, suelo + 2, cx + x + 32, suelo + 26], fill=roca_clara)
+            d.polygon([(cx + x - 5, suelo + 2), (cx + x + 37, suelo + 2),
+                       (cx + x + 16, suelo - 16)], fill=lava)
+        for x in (180, 250, 330, 400):                                        # bosque
+            arbol(d, cx + x, suelo + 58, 34, arauc)
     elif vid == "quetrupillan":
         cono(d, cx + 30, suelo - 10, 330, 300, roca, plano=0.30)
         cono(d, cx - 250, suelo - 4, 150, 130, roca_clara)

@@ -55,13 +55,7 @@ ESCENAS = [
         "acento": PALETA["lava"],
         "scroll": 1.7, "linger": 0.45,
         "label": {"es": "Villarrica", "en": "Villarrica"},
-        "sujeto": (
-            "A miniature snow-capped stratovolcano island with a perfect cone, a thin "
-            "plume of steam and a faint orange glow rising from its summit crater, a "
-            "line of six tiny roped climbers with ice axes ascending the snow face at "
-            "dawn, crevassed glacier, black lava rock showing through the snow, a "
-            "narrow sliding track carved down the snow slope"
-        ),
+        "sujeto": "A miniature island of the Villarrica volcano as seen from Pucón: a broad symmetrical stratovolcano with a slightly TRUNCATED flat-topped summit and a wide open crater, NOT a sharp peak, the upper third covered by a permanent glacier cap with narrow ice tongues running down radial gullies and dark basalt ribs showing between them, a steady white steam plume and a faint orange glow from the open summit crater, a line of six tiny roped climbers with ice axes on the snow, a deep blue lake at its foot with a black-sand shore, a small lakeside town of low red-roofed buildings and a wooden pier, a dense dark forest skirt around the base",
         "foco": "the glowing summit crater",
         "copy": {
             "es": {
@@ -85,12 +79,7 @@ ESCENAS = [
         "acento": PALETA["azufre"],
         "scroll": 1.3, "linger": 0.3,
         "label": {"es": "Quetrupillán", "en": "Quetrupillán"},
-        "sujeto": (
-            "A miniature wild volcano island with a broad weathered cone and old lava "
-            "flows, scattered araucaria trees on its lower flanks, steaming fumaroles on "
-            "a bare rock shoulder, an empty volcanic plateau with no roads and no "
-            "buildings, two tiny hikers crossing it"
-        ),
+        "sujeto": "A miniature island of the Quetrupillán volcano: a BROAD, LOW, eroded volcano with a wide flat shoulder and several old craters rather than one summit, weathered dark lava flows fanning out across a bare volcanic plateau, steaming fumaroles on a rock shoulder, scattered araucaria monkey-puzzle trees on the lower flanks, no roads and no buildings anywhere, two tiny hikers crossing the plateau",
         "foco": "the empty summit plateau",
         "copy": {
             "es": {
@@ -114,12 +103,7 @@ ESCENAS = [
         "acento": PALETA["araucaria"],
         "scroll": 1.5, "linger": 0.4,
         "label": {"es": "Lanín", "en": "Lanín"},
-        "sujeto": (
-            "A miniature island of a tall near-perfect snow-covered volcanic cone rising "
-            "far above everything around it, a dense grove of umbrella-shaped araucaria "
-            "monkey-puzzle trees at its base, a small high camp with two orange tents on "
-            "a ridge, long shadows"
-        ),
+        "sujeto": "A miniature island of the Lanín volcano: a TALL, SLENDER, isolated cone rising far higher than everything around it, steep straight flanks, snow only on the upper half with bare dark rock ridges below and NO glacier cap, a dense grove of umbrella-shaped araucaria monkey-puzzle trees at its base, a small high camp with two orange tents on a ridge, long evening shadows",
         "foco": "the high camp below the summit",
         "copy": {
             "es": {
@@ -143,12 +127,7 @@ ESCENAS = [
         "acento": PALETA["lago"],
         "scroll": 1.5, "linger": 0.45,
         "label": {"es": "Sollipulli", "en": "Sollipulli"},
-        "sujeto": (
-            "A miniature island of an enormous circular volcanic caldera filled edge to "
-            "edge with a flat white glacier, blue ice cracks across its surface, the dark "
-            "crater rim ringing it like a wall, native forest climbing the outer slopes, "
-            "three tiny figures standing on the rim looking in"
-        ),
+        "sujeto": "A miniature island of the Sollipulli volcano: an enormous CIRCULAR caldera, wide and low rather than a cone, filled edge to edge with a flat white glacier, blue ice cracks across its surface, the dark crater rim ringing it like a wall, native forest climbing the outer slopes, three tiny figures standing on the rim looking in",
         "foco": "the glacier filling the caldera",
         "copy": {
             "es": {
@@ -172,12 +151,7 @@ ESCENAS = [
         "acento": PALETA["nieve"],
         "scroll": 1.3, "linger": 0.3,
         "label": {"es": "Mocho-Choshuenco", "en": "Mocho-Choshuenco"},
-        "sujeto": (
-            "A miniature island of a flat-topped glaciated volcano beside a second sharper "
-            "peak, a wide white ice cap on the flat summit, deep temperate rainforest and "
-            "a small dark lake at its feet, mist caught in the valleys, a single track "
-            "climbing from the forest to the ice"
-        ),
+        "sujeto": "A miniature island of the Mocho-Choshuenco massif: TWO summits side by side on one base, the left one FLAT-TOPPED and capped by a wide white ice cap, the right one a sharper rocky peak, deep temperate Valdivian rainforest and a small dark lake at their feet, mist caught in the valleys, a single track climbing from the forest up to the ice",
         "foco": "the ice cap on the flat summit",
         "copy": {
             "es": {
