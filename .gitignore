@@ -1,3 +1,5 @@
 produccion/.tmp/
 .DS_Store
 __pycache__/
+sistema/terravolcano.db
+sistema/*.db

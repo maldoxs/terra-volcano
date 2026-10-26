@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terra Volcano · Administración</title>
+<style>
+:root{--obsidiana:#14110F;--lava:#D64A1E;--azufre:#E8B33C;--araucaria:#2F5D4A;
+      --lago:#3A7CA5;--nieve:#F2EDE6;--linea:rgba(20,17,15,.12)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--nieve);color:var(--obsidiana);
+     font:15px/1.5 -apple-system,BlinkMacSystemFont,system-ui,sans-serif}
+header{background:var(--obsidiana);color:var(--nieve);padding:16px 24px;display:flex;
+       align-items:center;gap:14px;flex-wrap:wrap}
+header b{font-size:17px}header span{color:rgba(242,237,230,.6);font-size:13px}
+main{max-width:1180px;margin:0 auto;padding:28px 20px 80px}
+h1{font-size:24px;margin:0 0 4px;letter-spacing:-.02em}
+.sub{color:#6b625a;margin:0 0 26px;font-size:14px}
+.salida{background:#fff;border:1px solid var(--linea);border-radius:4px;padding:16px 18px;
+        margin-bottom:12px;display:flex;gap:18px;align-items:center;cursor:pointer;flex-wrap:wrap}
+.salida:hover{border-color:var(--lava)}
+.salida .f{font-weight:700;min-width:116px}
+.salida .a{flex:1;min-width:200px}
+.chip{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.ok{background:rgba(47,93,74,.14);color:var(--araucaria)}
+.warn{background:rgba(232,179,60,.26);color:#8a6410}
+.bad{background:rgba(214,74,30,.14);color:var(--lava)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:14px}
+th,td{border-bottom:1px solid var(--linea);padding:11px 10px;text-align:left}
+th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#6b625a;background:#faf7f3}
+.alerta{background:#FDF0E8;border:1px solid var(--lava);border-radius:4px;padding:12px 14px;margin:0 0 16px;font-size:14px}
+.alerta b{color:var(--lava)}
+.btn{border:1px solid var(--linea);background:#fff;border-radius:3px;padding:8px 14px;
+     font:600 13px/1 inherit;cursor:pointer;text-decoration:none;color:inherit;display:inline-block}
+.btn:hover{border-color:var(--obsidiana)}
+.btn.p{background:var(--obsidiana);color:var(--nieve);border-color:var(--obsidiana)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.acciones{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+.cab{background:#fff;border:1px solid var(--linea);border-radius:4px;padding:18px;margin-bottom:18px}
+.cab dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:0}
+.cab dt{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#6b625a}
+.cab dd{margin:3px 0 0;font-weight:600}
+a.volver{color:#6b625a;text-decoration:none;font-size:14px}
+code{background:#faf7f3;padding:2px 6px;border-radius:3px;font-size:12px}
+</style></head>
+<body>
+<header><b>Terra Volcano</b><span>Módulo de administración · prototipo</span></header>
+<main id="app">Cargando…</main>
+
+<script>
+const $ = (h) => { const d = document.createElement('div'); d.innerHTML = h.trim(); return d.firstChild; };
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const app = document.getElementById('app');
+
+async function listado() {
+  const ss = await (await fetch('/api/salidas')).json();
+  app.innerHTML = `<h1>Salidas</h1>
+    <p class="sub">Haz clic en una salida para ver el manifiesto. El semáforo muestra cuántos pasajeros ya firmaron.</p>`;
+  for (const s of ss) {
+    const faltan = s.inscritos - s.firmados;
+    const ratio = s.guias > 0 && s.inscritos <= s.guias * 3;
+    const el = $(`<div class="salida">
+      <div class="f">${esc(s.fecha)}<br><span style="font-weight:400;color:#6b625a">${esc(s.hora || '')}</span></div>
+      <div class="a"><b>${esc(s.actividad)}</b><br>
+        <span style="color:#6b625a;font-size:13px">${s.inscritos}/${s.cupo_max} pasajeros · ${s.guias} guía(s)</span></div>
+      <span class="chip ${faltan ? 'warn' : 'ok'}">${faltan ? faltan + ' sin firmar' : 'todos firmados'}</span>
+      <span class="chip ${ratio ? 'ok' : 'bad'}">ratio ${ratio ? 'OK' : 'excedida'}</span>
+      <span class="chip ${s.alerta_sernageomin === 'Verde' ? 'ok' : 'warn'}">alerta ${esc(s.alerta_sernageomin || 's/i')}</span>
+    </div>`);
+    el.onclick = () => manifiesto(s.id);
+    app.appendChild(el);
+  }
+}
+
+async function manifiesto(id) {
+  const s = await (await fetch('/api/salida/' + id)).json();
+  const sinFirma = s.pasajeros.filter(p => !p.firma_id);
+  const salud = s.pasajeros.filter(p => p.alergias || p.medicamentos || p.cirugias || p.embarazo);
+
+  app.innerHTML = `<a class="volver" href="#" id="volver">← Todas las salidas</a>
+  <h1 style="margin-top:10px">${esc(s.nombre_es)}</h1>
+  <p class="sub">${esc(s.fecha)} · ${esc(s.hora_inicio_prevista)}–${esc(s.hora_fin_prevista)}</p>
+  <div class="cab"><dl>
+    <div><dt>Guías</dt><dd>${esc(s.guias.map(g => g.nombre).join(', ')) || '—'}</dd></div>
+    <div><dt>Ocupación</dt><dd>${s.pasajeros.length} / ${s.cupo_max}</dd></div>
+    <div><dt>Ratio guía / pasajero</dt><dd>${s.ratio_ok ? '1:3 o mejor ✓' : '⚠ excedida'}</dd></div>
+    <div><dt>Alerta volcánica</dt><dd>${esc(s.alerta_sernageomin || 's/i')}</dd></div>
+    <div><dt>Edad mínima</dt><dd>${esc(s.edad_minima)} años</dd></div>
+    <div><dt>Desnivel</dt><dd>${esc(s.desnivel_m)} m</dd></div>
+  </dl></div>
+
+  ${sinFirma.length ? `<div class="alerta"><b>${sinFirma.length} pasajero(s) sin firmar:</b>
+    ${esc(sinFirma.map(p => p.nombre).join(', '))}. Sin firma no se puede hacer check-in.</div>` : ''}
+  ${salud.length ? `<div class="alerta"><b>Atención médica del grupo:</b><br>${salud.map(p =>
+      esc(p.nombre) + ': ' + [p.alergias && 'alergias ' + (p.alergias_detalle || ''),
+        p.medicamentos && 'medicamentos ' + (p.medicamentos_detalle || ''),
+        p.cirugias && 'cirugía reciente', p.embarazo && 'embarazo']
+        .filter(Boolean).map(esc).join(' · ')).join('<br>')}</div>` : ''}
+
+  <div class="acciones">
+    <a class="btn p" href="/imprimir/salida/${s.id}" target="_blank">Manifiesto para imprimir / PDF</a>
+    <button class="btn" id="recordar">Enviar recordatorio a los pendientes</button>
+  </div>
+
+  <table><tr><th>Pasajero</th><th>Nac.</th><th>Edad</th><th>Peso</th><th>Contacto emergencia</th>
+    <th>Canal</th><th>Registro</th><th>Firma</th><th>Check-in</th><th></th></tr>
+    ${s.pasajeros.map(p => `<tr>
+      <td><b>${esc(p.nombre)}</b>${p.es_menor ? ' <span class="chip warn">menor</span>' : ''}</td>
+      <td>${esc(p.nacionalidad || '—')}</td><td>${esc(p.edad ?? '—')}</td><td>${esc(p.peso_kg ?? '—')}</td>
+      <td>${esc(p.emergencia || '—')}</td><td><code>${esc(p.canal)}</code></td>
+      <td><span class="chip ${p.completado_en ? 'ok' : 'bad'}">${p.completado_en ? 'OK' : 'falta'}</span></td>
+      <td><span class="chip ${p.firma_id ? 'ok' : 'bad'}">${p.firma_id ? 'firmado' : 'falta'}</span></td>
+      <td><span class="chip ${p.checkin_en ? 'ok' : 'warn'}">${p.checkin_en ? 'presente' : 'pendiente'}</span></td>
+      <td style="white-space:nowrap">
+        ${p.firma_id
+          ? `<a class="btn" href="/imprimir/registro/${esc(p.token_registro)}" target="_blank">Ver ficha</a>`
+          : `<a class="btn" href="/registro/${esc(p.token_registro)}" target="_blank">Abrir formulario</a>`}
+        <button class="btn chk" data-r="${p.reserva_id}" ${p.firma_id && !p.checkin_en ? '' : 'disabled'}>Check-in</button>
+      </td></tr>`).join('')}
+  </table>`;
+
+  document.getElementById('volver').onclick = (e) => { e.preventDefault(); listado(); };
+  document.getElementById('recordar').onclick = () =>
+    alert(`Se enviaría recordatorio a ${sinFirma.length} pasajero(s).\n\n` +
+          sinFirma.map(p => `· ${p.nombre} → ${location.origin}/registro/${p.token_registro}`).join('\n'));
+  for (const b of document.querySelectorAll('.chk')) b.onclick = async () => {
+    const r = await fetch(`/api/salida/${id}/checkin`, { method: 'POST',
+      headers: { 'content-type': 'application/json' }, body: JSON.stringify({ reserva_id: +b.dataset.r }) });
+    if (!r.ok) return alert('Sin firma no se puede hacer check-in.');
+    manifiesto(id);
+  };
+}
+
+listado();
+</script></body></html>
