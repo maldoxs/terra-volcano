@@ -187,8 +187,8 @@ window.TV_CONTENIDO = {
       "copy": {
         "es": {
           "eyebrow": "Reserva directa",
-          "title": "Richard te sube.",
-          "body": "Once años guiando en estos cerros, equipo propio y un guía cada tres personas. Reservas directo con él, sin intermediarios.",
+          "title": "Terra Volcano te sube.",
+          "body": "Once años guiando en estos cerros, equipo propio y un guía cada tres personas. Reservas directo con ellos, sin intermediarios.",
           "tags": [
             "Acreditado en Pucón",
             "Equipo incluido",
@@ -207,8 +207,8 @@ window.TV_CONTENIDO = {
         },
         "en": {
           "eyebrow": "Book direct",
-          "title": "Richard takes you up.",
-          "body": "Eleven years guiding these mountains, his own gear, and one guide per three climbers. You book straight with him, no middleman.",
+          "title": "Terra Volcano takes you up.",
+          "body": "Eleven years guiding these mountains, their own gear, and one guide per three climbers. You book straight with them, no middleman.",
           "tags": [
             "Pucón accredited",
             "Gear included",
