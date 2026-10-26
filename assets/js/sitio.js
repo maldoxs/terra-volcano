@@ -119,7 +119,9 @@
   /* El CTA del vuelo y el del bloque de reserva apuntan al mismo lugar. El href
      real de WhatsApp se pone una sola vez acá, cuando Richard confirme el
      número (el que circula salió de una reseña, no de ellos). */
-  var WSP = null;   // ej: 'https://wa.me/56900000000?text=Hola%20Richard...'
+  var WSP = 'https://wa.me/56983388317?text=' + encodeURIComponent(
+    L === 'es' ? 'Hola, quiero reservar el ascenso al volcán Villarrica. ¿Qué fechas tienen disponibles?'
+               : 'Hi, I want to book the Villarrica volcano ascent. What dates do you have available?');
   if (WSP) document.querySelectorAll('a[href="#CONFIRMAR-WHATSAPP"]')
     .forEach(function (a) { a.href = WSP; a.target = '_blank'; a.rel = 'noopener'; });
 })();

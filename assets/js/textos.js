@@ -38,7 +38,7 @@ window.TV_TEXTOS = {
     "reserva.btn2": "Volver a ver los volcanes",
     "reserva.promesa": "Si el clima obliga a cancelar, te reagendamos al día siguiente o te devolvemos. No perdiste el viaje. [POR CONFIRMAR la política textual]",
 
-    "pie.legal": "Turismo Aventura Richard Díaz Suazo EIRL · Av. Bernardo O'Higgins, Pucón, Región de La Araucanía, Chile",
+    "pie.legal": "Terra Volcano · Av. Bernardo O'Higgins 717, Local 4, Boulevard Patagonia, Pucón, Chile · +56 9 8338 8317",
     "pie.nota": "Las condiciones de ascenso dependen del nivel de alerta volcánica del Sernageomin."
   },
 
@@ -74,7 +74,7 @@ window.TV_TEXTOS = {
     "reserva.btn2": "Back to the volcanoes",
     "reserva.promesa": "If the weather forces a cancellation, we rebook you for the next day or refund you. You didn't lose the trip. [TO CONFIRM the exact policy]",
 
-    "pie.legal": "Turismo Aventura Richard Díaz Suazo EIRL · Av. Bernardo O'Higgins, Pucón, Araucanía Region, Chile",
+    "pie.legal": "Terra Volcano · Av. Bernardo O'Higgins 717, Local 4, Boulevard Patagonia, Pucón, Chile · +56 9 8338 8317",
     "pie.nota": "Climbing conditions depend on the Sernageomin volcanic alert level."
   }
 };
