@@ -80,6 +80,56 @@
   .credenciales li::before { content:"—"; position:absolute; left:0; color:var(--lava); font-weight:700; }
 
   .reserva { background:var(--obsidiana); color:var(--nieve); }
+
+  /* Comparación de precio. El argumento del análisis es que hoy el visitante
+     que quiere saber cuánto cuesta se va a la OTA, y ahí la agencia paga
+     20-30% de comisión. Esto lo ataca mostrando las dos cifras juntas. */
+  .comparacion { display:grid; grid-template-columns:1.25fr .85fr; gap:18px;
+                 align-items:stretch; margin:0 0 20px; }
+  .tarjeta { border-radius:5px; padding:26px 26px 24px; position:relative; }
+  .tarjeta .etiqueta { font:700 11px/1 var(--sw-font-body); letter-spacing:.14em;
+                       text-transform:uppercase; margin:0 0 16px; display:block; }
+  .tarjeta .cifra { font:700 clamp(40px,6.4vw,66px)/1 var(--sw-font-display);
+                    letter-spacing:-.03em; display:block; }
+  .tarjeta .unidad { font-size:14px; margin:8px 0 0; }
+
+  .directa { background:var(--nieve); color:var(--obsidiana);
+             box-shadow:0 0 0 2px var(--lava), 0 18px 44px rgba(0,0,0,.34); }
+  .directa .etiqueta { color:var(--lava); }
+  .directa .unidad { color:#6b625a; }
+  .incluye { list-style:none; padding:0; margin:22px 0 24px; display:grid; gap:9px; }
+  .incluye li { padding-left:25px; position:relative; font-size:14.5px; line-height:1.45; }
+  .incluye li::before { content:"✓"; position:absolute; left:0; top:-1px;
+                        color:var(--araucaria); font-weight:700; }
+
+  .ota { background:rgba(242,237,230,.055); border:1px solid rgba(242,237,230,.16);
+         color:rgba(242,237,230,.72); display:flex; flex-direction:column; }
+  .ota .etiqueta { color:rgba(242,237,230,.5); }
+  .ota .cifra { color:rgba(242,237,230,.5); text-decoration:line-through;
+                text-decoration-thickness:2px; }
+  .ota .nota { font-size:13px; line-height:1.6; margin:auto 0 0;
+               color:rgba(242,237,230,.5); }
+
+  .ahorro { display:inline-flex; align-items:center; gap:9px; background:rgba(232,179,60,.14);
+            border:1px solid rgba(232,179,60,.4); color:var(--azufre);
+            border-radius:999px; padding:10px 18px; font-weight:700; font-size:14.5px;
+            margin:0 0 30px; }
+
+  .tarifas { width:100%; border-collapse:collapse; font-size:14.5px; margin:34px 0 0; }
+  .tarifas caption { text-align:left; font:700 11px/1 var(--sw-font-body);
+    letter-spacing:.14em; text-transform:uppercase; color:var(--azufre); padding:0 0 14px; }
+  .tarifas th, .tarifas td { text-align:left; padding:13px 10px;
+    border-bottom:1px solid rgba(242,237,230,.14); }
+  .tarifas th { font-size:11px; letter-spacing:.09em; text-transform:uppercase;
+                color:rgba(242,237,230,.5); font-weight:700; }
+  .tarifas td:first-child { font-weight:700; color:var(--nieve); }
+  .tarifas td:last-child { text-align:right; font-weight:700; white-space:nowrap; }
+
+  @media (max-width:760px) {
+    .comparacion { grid-template-columns:1fr; }
+    .ota { order:2; }
+    .tarifas th:nth-child(2), .tarifas td:nth-child(2) { display:none; }
+  }
   .reserva .bloque { padding:92px 24px; }
   .reserva h2 { color:var(--nieve); }
   .reserva .sub { color:rgba(242,237,230,.68); }
@@ -153,16 +203,35 @@
     <p class="cejilla" style="color:var(--azufre)" data-t="reserva.cejilla"></p>
     <h2 data-t="reserva.titulo"></h2>
     <p class="sub" data-t="reserva.sub"></p>
-    <div class="precio">
-      <span class="monto" data-t="reserva.monto"></span>
-      <span class="por" data-t="reserva.por"></span>
+
+    <div class="comparacion">
+      <div class="tarjeta directa">
+        <span class="etiqueta" data-t="reserva.etiq_directa"></span>
+        <span class="cifra" data-t="reserva.monto"></span>
+        <p class="unidad" data-t="reserva.por"></p>
+        <ul class="incluye" id="incluye"></ul>
+        <a class="btn btn-1" href="#CONFIRMAR-WHATSAPP" data-t="reserva.btn1"></a>
+      </div>
+      <div class="tarjeta ota">
+        <span class="etiqueta" data-t="reserva.etiq_ota"></span>
+        <span class="cifra" data-t="reserva.monto_ota"></span>
+        <p class="unidad" data-t="reserva.por_ota"></p>
+        <p class="nota" data-t="reserva.nota_ota"></p>
+      </div>
     </div>
+
     <p class="ahorro" data-t="reserva.ahorro"></p>
-    <div class="botones">
-      <a class="btn btn-1" id="btn-wsp" href="#CONFIRMAR-WHATSAPP" data-t="reserva.btn1"></a>
-      <a class="btn btn-2" href="#top" data-t="reserva.btn2"></a>
-    </div>
     <p class="promesa" data-t="reserva.promesa"></p>
+
+    <table class="tarifas">
+      <caption data-t="reserva.tarifas_tit"></caption>
+      <thead><tr>
+        <th data-t="reserva.th_tour"></th>
+        <th data-t="reserva.th_dur"></th>
+        <th style="text-align:right" data-t="reserva.th_precio"></th>
+      </tr></thead>
+      <tbody id="filas-tarifas"></tbody>
+    </table>
   </div>
 </section>
 

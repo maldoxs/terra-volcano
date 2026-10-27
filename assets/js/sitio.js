@@ -56,6 +56,25 @@
     });
   }
 
+  // --- lo que incluye el precio directo ---
+  var inc = document.getElementById('incluye');
+  if (inc) TXT[L]['reserva.incluye'].forEach(function (x) {
+    var li = document.createElement('li'); li.textContent = x; inc.appendChild(li);
+  });
+
+  // --- tarifas del resto del catálogo ---
+  var tf = document.getElementById('filas-tarifas');
+  if (tf) window.TV_TARIFAS.forEach(function (f) {
+    var tr = document.createElement('tr');
+    [f.tour[L], f.dur[L], f.precio].forEach(function (v, i) {
+      var td = document.createElement('td');
+      td.textContent = v;
+      if (i === 2) td.style.textAlign = 'right';
+      tr.appendChild(td);
+    });
+    tf.appendChild(tr);
+  });
+
   // --- credenciales ---------------------------------------------------------
   var ul = document.getElementById('credenciales');
   if (ul) TXT[L]['guia.credenciales'].forEach(function (t) {

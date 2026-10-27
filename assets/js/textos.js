@@ -29,14 +29,32 @@ window.TV_TEXTOS = {
     ],
 
     "reserva.cejilla": "Reserva directa",
-    "reserva.titulo": "Reserva con Richard, no con un intermediario.",
-    "reserva.sub": "Las plataformas de reserva cobran entre 20% y 30% de comisión. Reservando acá, esa plata se queda en Pucón y el precio te baja.",
-    "reserva.monto": "US$190",
+    "reserva.titulo": "El mismo ascenso. Sin comisión.",
+    "reserva.sub": "Las plataformas de reserva cobran entre 20% y 30%. Reservando acá esa plata se queda en Pucón, y el precio te baja.",
+    "reserva.etiq_directa": "Reservando acá",
+    "reserva.monto": "US$170",
     "reserva.por": "por persona · ascenso al Villarrica · [POR CONFIRMAR]",
-    "reserva.ahorro": "≈ US$45 menos que por una plataforma de reserva. [POR CONFIRMAR]",
+    "reserva.incluye": [
+      "Un guía cada tres personas",
+      "Equipo completo: botas, casco, crampones y piolet",
+      "Entrada al Parque Nacional Villarrica",
+      "Traslado desde Pucón y snack",
+      "Si el clima cancela, reagendamos o devolvemos"
+    ],
+    "reserva.etiq_ota": "En Viator o Expedia",
+    "reserva.monto_ota": "US$208",
+    "reserva.por_ota": "por persona, con cargos incluidos · [POR CONFIRMAR]",
+    "reserva.nota_ota": "Mismo guía, mismo cerro, mismo equipo. La diferencia se la queda la plataforma.",
+    "reserva.ahorro": "Ahorras US$38 por persona · US$152 en un grupo de cuatro",
     "reserva.btn1": "Reservar por WhatsApp",
-    "reserva.btn2": "Volver a ver los volcanes",
+    "reserva.btn2": "Volver a ver el volcán",
     "reserva.promesa": "Si el clima obliga a cancelar, te reagendamos al día siguiente o te devolvemos. No perdiste el viaje. [POR CONFIRMAR la política textual]",
+    "reserva.tarifas_tit": "El resto del catálogo",
+    "reserva.th_tour": "Expedición", "reserva.th_dur": "Duración", "reserva.th_precio": "Desde",
+    "reserva.tarifas_tit": "The rest of the catalogue",
+    "reserva.th_tour": "Expedition", "reserva.th_dur": "Duration", "reserva.th_precio": "From",
+    "reserva.tarifas_tit": "El resto del catálogo",
+    "reserva.th_tour": "Expedición", "reserva.th_dur": "Duración", "reserva.th_precio": "Desde",
 
     "pie.legal": "Terra Volcano · Av. Bernardo O'Higgins 717, Local 4, Boulevard Patagonia, Pucón, Chile · +56 9 8338 8317",
     "pie.nota": "Las condiciones de ascenso dependen del nivel de alerta volcánica del Sernageomin."
@@ -65,19 +83,43 @@ window.TV_TEXTOS = {
     ],
 
     "reserva.cejilla": "Book direct",
-    "reserva.titulo": "Book with Richard, not with a middleman.",
-    "reserva.sub": "Booking platforms take 20% to 30% in commission. Book here and that money stays in Pucón — and your price drops.",
-    "reserva.monto": "US$190",
+    "reserva.titulo": "Same climb. No commission.",
+    "reserva.sub": "Booking platforms take 20% to 30%. Book here and that money stays in Pucón — and your price drops.",
+    "reserva.etiq_directa": "Booking here",
+    "reserva.monto": "US$170",
     "reserva.por": "per person · Villarrica ascent · [TO CONFIRM]",
-    "reserva.ahorro": "≈ US$45 less than through a booking platform. [TO CONFIRM]",
+    "reserva.incluye": [
+      "One guide per three climbers",
+      "Full gear: boots, helmet, crampons and ice axe",
+      "Villarrica National Park entrance fee",
+      "Transfer from Pucón and a snack",
+      "Weather cancels — we rebook or refund"
+    ],
+    "reserva.etiq_ota": "On Viator or Expedia",
+    "reserva.monto_ota": "US$208",
+    "reserva.por_ota": "per person, fees included · [TO CONFIRM]",
+    "reserva.nota_ota": "Same guide, same mountain, same gear. The platform keeps the difference.",
+    "reserva.ahorro": "You save US$38 per person · US$152 for a group of four",
     "reserva.btn1": "Book on WhatsApp",
-    "reserva.btn2": "Back to the volcanoes",
+    "reserva.btn2": "Back to the volcano",
     "reserva.promesa": "If the weather forces a cancellation, we rebook you for the next day or refund you. You didn't lose the trip. [TO CONFIRM the exact policy]",
+    "reserva.tarifas_tit": "The rest of the catalogue",
+    "reserva.th_tour": "Expedition", "reserva.th_dur": "Duration", "reserva.th_precio": "From",
 
     "pie.legal": "Terra Volcano · Av. Bernardo O'Higgins 717, Local 4, Boulevard Patagonia, Pucón, Chile · +56 9 8338 8317",
     "pie.nota": "Climbing conditions depend on the Sernageomin volcanic alert level."
   }
 };
+
+/* Tarifas del catálogo. Cifras [POR CONFIRMAR] con Richard: las de las OTAs
+   salen de Tripadvisor y Expedia, no de la agencia. */
+window.TV_TARIFAS = [
+  { tour:{es:"Ascenso al Villarrica",  en:"Villarrica ascent"},   dur:{es:"6 a 8 h",      en:"6 to 8 h"},     precio:"US$170" },
+  { tour:{es:"Lanín, 2 días",          en:"Lanín, 2 days"},       dur:{es:"2 días",       en:"2 days"},       precio:"US$395" },
+  { tour:{es:"Ski touring Villarrica", en:"Villarrica ski touring"},dur:{es:"Día completo", en:"Full day"},   precio:"US$190" },
+  { tour:{es:"Ski touring Lonquimay",  en:"Lonquimay ski touring"},dur:{es:"Día completo", en:"Full day"},    precio:"US$190" },
+  { tour:{es:"Rafting río Trancura",   en:"Trancura river rafting"},dur:{es:"Medio día",   en:"Half day"},    precio:"US$65"  }
+];
 
 /* Tabla de exigencia: acá vive el catálogo completo. El vuelo de arriba es
    solo el Villarrica, que es lo que vende; los otros cuatro volcanes se listan
