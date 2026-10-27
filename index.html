@@ -144,6 +144,28 @@
   .btn-2 { border:1px solid rgba(242,237,230,.3); color:var(--nieve); }
   .promesa { margin:30px 0 0; font-size:14px; color:rgba(242,237,230,.72); line-height:1.6; max-width:56ch; }
 
+  /* Entrada al scroll. La clase `anim` la pone animacion.js solo si el
+     visitante no pidió menos movimiento: sin JS o con reduced-motion, todo
+     queda visible y nada depende de que la animación corra. */
+  .anim .revelar { opacity:0; transform:translateY(18px);
+    transition:opacity .62s cubic-bezier(.22,.61,.36,1),
+               transform .62s cubic-bezier(.22,.61,.36,1); }
+  .anim .revelar.visible { opacity:1; transform:none; }
+  .anim tr.revelar { transform:translateY(10px); }
+
+  /* Micro-interacciones. Solo opacity y transform: corren en el compositor. */
+  .btn, .tarjeta { transition:transform .28s cubic-bezier(.22,.61,.36,1),
+                              box-shadow .28s ease, background-color .2s ease; }
+  .btn-1:hover { transform:translateY(-2px); }
+  .btn-1:active { transform:translateY(0) scale(.985); }
+  .directa:hover { transform:translateY(-4px);
+                   box-shadow:0 0 0 2px var(--lava), 0 26px 58px rgba(0,0,0,.42); }
+  .tarifas tbody tr { transition:background-color .2s ease; }
+  .tarifas tbody tr:hover { background:rgba(242,237,230,.05); }
+  @media (prefers-reduced-motion: reduce) {
+    .btn, .tarjeta, .tarifas tbody tr { transition:none; }
+  }
+
   footer { padding:44px 24px 64px; text-align:center; font-size:13px;
            color:var(--sw-ink-soft); line-height:1.8; }
 
@@ -244,5 +266,6 @@
 <script src="assets/js/textos.js"></script>
 <script src="assets/js/scrub-engine.js"></script>
 <script src="assets/js/sitio.js"></script>
+<script src="assets/js/animacion.js"></script>
 </body>
 </html>
