@@ -9,8 +9,8 @@ trabajo está en [`../PLAN.md`](../PLAN.md).
 ## Transversal
 
 - [`ESTADO-ACTUAL.md`](ESTADO-ACTUAL.md) — hechos vigentes, se sobrescribe
-- [`BITACORA-IAS.md`](BITACORA-IAS.md) — log común, entrada nueva arriba
-- [`PROTOCOLO-IAS.md`](PROTOCOLO-IAS.md) — cómo dejar la documentación
+- [`CAMBIOS.md`](CAMBIOS.md) — log común, entrada nueva arriba
+- [`PROTOCOLO.md`](PROTOCOLO.md) — cómo dejar la documentación
 
 ## Sistema — registro de pasajeros
 

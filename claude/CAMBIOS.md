@@ -1,4 +1,4 @@
-# Cambios recientes — Terra Volcano
+# Registro de cambios — Terra Volcano
 
 **Este es el archivo común donde cada sesión anota lo que hizo**, para que la
 siguiente IA sepa qué cambió, qué quedó pendiente y qué está bloqueado sin
@@ -9,7 +9,7 @@ Antes de escribir acá, traer lo que haya en el remoto con
 `git pull --rebase origin main`: varias sesiones agregan su entrada arriba de
 todo y es donde se cruzan. Si aparece un conflicto, se conservan las dos
 entradas, nunca se descarta la de otra sesión. El formato y los errores
-comunes están en [`PROTOCOLO-IAS.md`](PROTOCOLO-IAS.md).
+comunes están en [`PROTOCOLO.md`](PROTOCOLO.md).
 
 El estado vigente **no va acá**: va en [`ESTADO-ACTUAL.md`](ESTADO-ACTUAL.md),
 que se sobrescribe. Este archivo es log histórico puro y sólo crece.
@@ -19,7 +19,7 @@ que se sobrescribe. Este archivo es log histórico puro y sólo crece.
 ### [DOC] Claude Opus 5, 2026-10-26
 
 **Archivos modificados:** `CLAUDE.md` (nuevo), `claude/` (estructura nueva:
-`Inicio.md`, `ESTADO-ACTUAL.md`, `BITACORA-IAS.md`, `PROTOCOLO-IAS.md`,
+`Inicio.md`, `ESTADO-ACTUAL.md`, `CAMBIOS.md`, `PROTOCOLO.md`,
 y `sistema/`, `sitio/`, `negocio/` con su `project-memory`,
 `current-sprint`, `architecture/` y `sessions/`)
 

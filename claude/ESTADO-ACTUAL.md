@@ -2,7 +2,7 @@
 
 Este archivo se **sobrescribe en el lugar**, nunca se le agrega como log. El
 historial de cómo se llegó a cada hecho está en
-[`BITACORA-IAS.md`](BITACORA-IAS.md). El orden de trabajo está en
+[`CAMBIOS.md`](CAMBIOS.md). El orden de trabajo está en
 [`../PLAN.md`](../PLAN.md); acá sólo van **hechos vigentes**.
 
 Última actualización: 2026-10-27

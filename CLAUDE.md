@@ -6,15 +6,15 @@
    por línea, con enlace al detalle. Es el punto de entrada.
 2. Leer [`PLAN.md`](PLAN.md): las fases, las decisiones ya tomadas y lo que
    explícitamente **no** se hace ahora.
-3. Leer [`claude/BITACORA-IAS.md`](claude/BITACORA-IAS.md): el archivo común
+3. Leer [`claude/CAMBIOS.md`](claude/CAMBIOS.md): el archivo común
    donde cada sesión anota qué cambió, qué quedó pendiente y qué está
    bloqueado.
-4. Leer [`claude/PROTOCOLO-IAS.md`](claude/PROTOCOLO-IAS.md): es obligatorio
+4. Leer [`claude/PROTOCOLO.md`](claude/PROTOCOLO.md): es obligatorio
    cumplirlo al terminar.
 
 ## Al terminar
 
-Todo cambio se registra en `claude/BITACORA-IAS.md`, con la ruta completa del
+Todo cambio se registra en `claude/CAMBIOS.md`, con la ruta completa del
 archivo y el estado real: hecho, pendiente, o bloqueado y por quién. Sin eso,
 la siguiente sesión no sabe qué se hizo y duplica trabajo.
 
@@ -23,7 +23,7 @@ la siguiente sesión no sabe qué se hizo y duplica trabajo.
 - **Un dato, un solo lugar.** Si un hecho ya está escrito, enlázalo, no lo
   copies. Dos archivos con el mismo número y uno que cambia = el otro miente.
 - **`ESTADO-ACTUAL.md` se sobrescribe en el lugar**, nunca se le agrega como
-  log. El historial va en `BITACORA-IAS.md`.
+  log. El historial va en `CAMBIOS.md`.
 - **Nada de datos inventados.** Precios, teléfonos y cifras de la agencia van
   marcados `[POR CONFIRMAR]` hasta que Richard los valide.
 - **Las fotos del repositorio no son de Terra Volcano.** Ver

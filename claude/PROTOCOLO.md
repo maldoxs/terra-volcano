@@ -1,8 +1,11 @@
-# Protocolo para IAs que trabajen en este proyecto
+# Protocolo de documentación
 
-Replica el protocolo del SCP de Grupos Empresariales, adaptado a este
-repositorio. Una diferencia a favor: **acá todas las rutas son relativas al
-repositorio**, no a una carpeta del Mac. Si el equipo cambia, nada se rompe.
+Cómo dejar la documentación al terminar una sesión en este repositorio.
+
+Sigue la misma idea que el proyecto de Grupos Empresariales —estado vigente
+separado del historial, un dato en un solo lugar— pero es **independiente**:
+otros nombres de archivo, otras áreas, y todas las rutas relativas al
+repositorio en vez de a una carpeta del Mac.
 
 ## Dónde está la documentación
 
@@ -28,7 +31,7 @@ el otro queda mintiendo en silencio.
 
 ### 1. Antes de editar: traer lo que haya en el remoto
 
-Varias sesiones escriben sobre los mismos archivos, y a `BITACORA-IAS.md` todas
+Varias sesiones escriben sobre los mismos archivos, y a `CAMBIOS.md` todas
 le agregan arriba de todo. Traer primero evita el conflicto; traer al final lo
 garantiza.
 
@@ -51,7 +54,7 @@ git pull --rebase origin main      # si el remoto viene adelantado
 | Un hecho vigente cambió | `claude/ESTADO-ACTUAL.md` |
 | El orden de las fases | `PLAN.md` |
 
-### 3. Escribir la entrada en `BITACORA-IAS.md`
+### 3. Escribir la entrada en `CAMBIOS.md`
 
 Es el archivo común donde cada sesión anota lo que hizo, de cualquier IA. La
 entrada va **arriba de la última**, con este formato:
@@ -80,7 +83,7 @@ qué archivo se tocó.
   marcados `[POR CONFIRMAR]` hasta que Richard los valide. Ya hubo que corregir
   el catálogo dos veces por suponer.
 - **Repetir el estado en dos lados.** `ESTADO-ACTUAL.md` se sobrescribe;
-  `BITACORA-IAS.md` sólo crece. No mezclarlos.
+  `CAMBIOS.md` sólo crece. No mezclarlos.
 - **Tocar el texto legal.** `sistema/documento.js` lleva la declaración de
   riesgo versionada con su hash. Cambiarla invalida la trazabilidad de las
   firmas anteriores: si se cambia, se sube la versión, nunca se edita en el

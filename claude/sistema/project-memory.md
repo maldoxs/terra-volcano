@@ -2,7 +2,7 @@
 
 El detalle de **por qué** el sistema quedó como quedó. Lo vigente está en
 [`../ESTADO-ACTUAL.md`](../ESTADO-ACTUAL.md); el log por sesión en
-[`../BITACORA-IAS.md`](../BITACORA-IAS.md).
+[`../CAMBIOS.md`](../CAMBIOS.md).
 
 ## 2026-10-26 — De dónde salió el proyecto
 
