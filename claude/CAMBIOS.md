@@ -16,6 +16,20 @@ que se sobrescribe. Este archivo es log histórico puro y sólo crece.
 
 ---
 
+### [DOC] Claude Opus 5, 2026-10-27 (b)
+
+**Archivos modificados:** `claude/sistema/architecture/modelo-datos.md`,
+`PLAN.md`
+
+- El diagrama del modelo de datos pasó de un dibujo ASCII de cajas a un
+  **diagrama entidad-relación en Mermaid**, con las columnas de cada tabla,
+  las claves (PK/FK/UK) y las cardinalidades reales. GitHub lo renderiza solo.
+- Se generó leyendo `sistema/schema.sql`, no de memoria: es un reflejo del
+  esquema, no una versión paralela.
+- **Se eliminó la copia del diagrama que estaba en `PLAN.md`**, que quedó
+  apuntando al documento de arquitectura. Eran dos copias del mismo dibujo y
+  la regla del proyecto es un dato en un solo lugar.
+
 ### [DOC] Claude Opus 5, 2026-10-27
 
 **Archivos modificados:** `CLAUDE.md`

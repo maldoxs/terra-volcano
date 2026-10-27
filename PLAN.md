@@ -54,15 +54,8 @@ Esto es tan importante como la lista de tareas. Aparcado a propósito:
 Sí. **Doce tablas**, y el esquema de producción ya está escrito y probado en
 [`sistema/schema.sql`](sistema/schema.sql).
 
-```
-        actividad ──┐
-                    ├──> salida ──> salida_guia ──> guia
-        cliente ────┴──> reserva ──┬──> registro ──┬──> contacto_emergencia
-                                   │               └──> firma
-                                   ├──> ascenso
-                                   └──> equipo_entregado
-                      incidente, comunicacion
-```
+El diagrama entidad-relación completo, con columnas y cardinalidades, está
+en [`claude/sistema/architecture/modelo-datos.md`](claude/sistema/architecture/modelo-datos.md).
 
 | Tabla | Para qué |
 |---|---|

@@ -3,14 +3,131 @@
 El esquema ejecutable vive en [`../../../sistema/schema.sql`](../../../sistema/schema.sql)
 (PostgreSQL). Este documento explica **por qué** está así; el SQL es la verdad.
 
-```
-        actividad ──┐
-                    ├──> salida ──> salida_guia ──> guia
-        cliente ────┴──> reserva ──┬──> registro ──┬──> contacto_emergencia
-                                   │               └──> firma
-                                   ├──> ascenso
-                                   └──> equipo_entregado
-                      incidente, comunicacion
+```mermaid
+erDiagram
+    ACTIVIDAD ||--o{ SALIDA : "se programa en fechas"
+    SALIDA    ||--o{ SALIDA_GUIA : "asigna"
+    GUIA      ||--o{ SALIDA_GUIA : "trabaja en"
+    SALIDA    ||--o{ RESERVA : "recibe"
+    CLIENTE   ||--o{ RESERVA : "hace"
+    RESERVA   ||--|| REGISTRO : "formulario legal"
+    REGISTRO  ||--o{ CONTACTO_EMERGENCIA : "declara 2"
+    REGISTRO  ||--|| FIRMA : "se firma con"
+    RESERVA   ||--o| ASCENSO : "resultado"
+    RESERVA   ||--o{ EQUIPO_ENTREGADO : "retira"
+    SALIDA    ||--o{ INCIDENTE : "registra"
+    RESERVA   ||--o{ INCIDENTE : "puede involucrar"
+    CLIENTE   ||--o{ COMUNICACION : "recibe"
+    RESERVA   ||--o{ COMUNICACION : "origina"
+
+    ACTIVIDAD {
+        bigserial id PK
+        text      nombre_es
+        text      nombre_en
+        text      itinerario_es
+        text      itinerario_en
+        integer   desnivel_m
+        integer   edad_minima
+        numeric   precio_base
+    }
+    GUIA {
+        bigserial id PK
+        text      nombre
+        text      documento_id "lo exige el decreto"
+        text      acreditacion
+    }
+    SALIDA {
+        bigserial id PK
+        bigint    actividad_id FK
+        date      fecha
+        integer   cupo_max
+        text      estado "programada|confirmada|cancelada_clima|realizada"
+        text      alerta_sernageomin
+    }
+    SALIDA_GUIA {
+        bigint salida_id PK,FK
+        bigint guia_id   PK,FK
+        text   rol "guia|principal — habilita ratio 1:3"
+    }
+    CLIENTE {
+        bigserial id PK
+        text      nombre
+        text      email
+        text      nacionalidad
+        text      idioma "es|en"
+        boolean   consentimiento_marketing
+    }
+    RESERVA {
+        bigserial   id PK
+        bigint      salida_id FK
+        bigint      cliente_id FK
+        text        canal "web|presencial|viator|getyourguide|..."
+        numeric     precio_pagado
+        text        estado "confirmada|no_show|completada|cancelada"
+        text        token_registro UK "el QR del pasajero"
+        timestamptz checkin_en
+    }
+    REGISTRO {
+        bigserial id PK
+        bigint    reserva_id FK,UK
+        integer   edad "snapshot del dia"
+        numeric   peso_kg "snapshot del dia"
+        boolean   es_menor
+        text      tutor_nombre
+        boolean   alergias "DATO DE SALUD"
+        boolean   medicamentos "DATO DE SALUD"
+        boolean   cirugias "DATO DE SALUD"
+        boolean   embarazo "DATO DE SALUD"
+    }
+    CONTACTO_EMERGENCIA {
+        bigserial id PK
+        bigint    registro_id FK
+        smallint  orden "1 o 2"
+        text      nombre
+        text      telefono
+    }
+    FIRMA {
+        bigserial   id PK
+        bigint      registro_id FK,UK
+        text        documento_version
+        text        documento_hash "SHA-256 del texto firmado"
+        bytea       trazo_png
+        timestamptz firmado_en
+        inet        ip
+        text        metodo_verificacion "email|sms|ninguno"
+        boolean     acepto_riesgo "obligatorio"
+        boolean     acepto_imagen
+        boolean     acepto_marketing
+        text        pdf_hash
+    }
+    ASCENSO {
+        bigint      reserva_id PK,FK
+        boolean     llego_cumbre
+        integer     altitud_alcanzada
+        timestamptz hora_cumbre
+    }
+    EQUIPO_ENTREGADO {
+        bigserial   id PK
+        bigint      reserva_id FK
+        text        item
+        text        talla
+        timestamptz devuelto_en
+    }
+    INCIDENTE {
+        bigserial   id PK
+        bigint      salida_id FK
+        bigint      reserva_id FK "nullable"
+        text        tipo
+        timestamptz ocurrido_en
+    }
+    COMUNICACION {
+        bigserial   id PK
+        bigint      cliente_id FK
+        bigint      reserva_id FK "nullable"
+        text        tipo "recordatorio_72h|post_ascenso|campania"
+        text        canal "email|whatsapp|sms"
+        timestamptz enviado_en
+    }
 ```
 
 ## Las tablas
