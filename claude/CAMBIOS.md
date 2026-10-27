@@ -16,6 +16,27 @@ que se sobrescribe. Este archivo es log histórico puro y sólo crece.
 
 ---
 
+### [DOC] Claude Opus 5, 2026-10-27 (c)
+
+**Archivos modificados:** `claude/sistema/architecture/flujos.md`
+
+- El recorrido completo pasó de texto plano a un **diagrama de flujo en
+  Mermaid**, con las seis etapas, las decisiones del sistema (ratio 1:3, leyó
+  el texto, firmó, llegó a la cumbre) y los dos caminos de entrada: reserva
+  con enlace y walk-in con QR del mostrador.
+- Cada paso va **pintado según su estado real**: verde lo construido, amarillo
+  lo de fase 3, rojo lo bloqueado. Hoy sólo hay un nodo rojo, *lee el texto
+  legal completo*, porque falta el texto oficial del decreto.
+- Esto responde a la pregunta de qué falta sin tener que cruzar el documento
+  con `PLAN.md`: se ve en el dibujo.
+
+**Nota de entorno (no toca el repositorio):** el CLI de Claude Code en el Mac
+había quedado instalado bajo Node 24.22.0 y desapareció del PATH al subir a
+24.22.1 — los globales de npm en nvm son por versión. Eso, y no una falta de
+instalación, era la causa de que una sesión reportara que REA no existía. REA
+está conectado. Se resolvió con `nvm reinstall-packages v24.22.0` y se quitó
+el MCP de 21st.dev, que fallaba y ya no se usa.
+
 ### [DOC] Claude Opus 5, 2026-10-27 (b)
 
 **Archivos modificados:** `claude/sistema/architecture/modelo-datos.md`,
