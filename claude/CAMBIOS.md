@@ -16,6 +16,23 @@ que se sobrescribe. Este archivo es log histórico puro y sólo crece.
 
 ---
 
+### [DOC] Claude Opus 5, 2026-10-27
+
+**Archivos modificados:** `CLAUDE.md`
+
+- Se agregó a las reglas el flujo de diseño: referencia visual → pantallazo →
+  skill `screenshot-to-code`, que escribe Vue o HTML/CSS puro.
+- Queda anotado **no instalar el CLI de 21st.dev**: genera React + shadcn, que
+  no es el stack de este sitio. 21st.dev se usa sólo como galería de
+  referencia (su botón *Copy prompt* es lo aprovechable, y es gratis).
+- Motivo: la sesión se fue varias horas en instalar herramientas. El stack de
+  skills ya está completo (`motion`, `ui-ux-pro-max`, `screenshot-to-code`,
+  `design`, Playwright, REA) y **no falta instalar nada más**.
+
+**Pendiente, sin empezar:** autenticación del panel `/admin`. Hoy expone
+alergias, medicamentos y embarazos de pasajeros a cualquiera con la URL. Es el
+único riesgo abierto que no depende de Richard.
+
 ### [DOC] Claude Opus 5, 2026-10-26
 
 **Archivos modificados:** `CLAUDE.md` (nuevo), `claude/` (estructura nueva:

@@ -32,6 +32,11 @@ la siguiente sesión no sabe qué se hizo y duplica trabajo.
 - **Español e inglés, nada más.** Es el mínimo que exige el Decreto 19/2018.
 - El texto legal de la declaración de riesgo vive en `sistema/documento.js`,
   versionado y con hash. **No se edita sin revisión de un abogado.**
+- **Para diseño: referencia visual → pantallazo → `screenshot-to-code`.** Se
+  busca el componente en [21st.dev](https://21st.dev) (o donde sea), se copia
+  su *prompt* o se saca un pantallazo, y la skill lo escribe en Vue o en
+  HTML/CSS puro. **No instalar el CLI de 21st**: genera React + shadcn, que no
+  es el stack de este sitio. Para paleta y tipografía, `ui-ux-pro-max`.
 
 ## Estructura
 
