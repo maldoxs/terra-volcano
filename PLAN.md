@@ -3,6 +3,12 @@
 **Este es el único documento que hay que leer para saber dónde estamos.**
 Todo lo demás es detalle y está enlazado desde acá.
 
+Acá va **el orden del trabajo**. Los **hechos vigentes** (datos de la agencia,
+qué está construido, qué está bloqueado) viven en
+[`claude/ESTADO-ACTUAL.md`](claude/ESTADO-ACTUAL.md), y el historial de cómo se
+llegó a cada cosa en [`claude/BITACORA-IAS.md`](claude/BITACORA-IAS.md). No se
+repiten entre sí: un dato, un solo lugar.
+
 Actualizado: 2026-10-26
 
 ---
