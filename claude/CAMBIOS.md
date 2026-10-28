@@ -16,6 +16,38 @@ que se sobrescribe. Este archivo es log histórico puro y sólo crece.
 
 ---
 
+### [SITIO] Claude Opus 5, 2026-10-28
+
+**Archivos modificados:** `produccion/maqueta-home/index.html` (nuevo, 44 KB)
+
+- Maqueta de **home público**, independiente de la landing del Villarrica que
+  vive en `index.html`. No toca el WordPress: `PLAN.md` ya decidió que no se
+  migra, así que esto es material para decidir diseño, no un reemplazo.
+- Pieza central: **el ascenso atado al scroll**. Una banda de 360vh fija el
+  escenario con `position:sticky` y el progreso dentro de esa banda maneja todo
+  desde una sola función `render(p)`: trazo de la ruta con `stroke-dashoffset`,
+  escalador siguiendo la ruta con `getPointAtLength`, altímetro, los tres
+  colores del cielo, estrellas que se apagan y la fumarola del cráter.
+- Resto de patrones: reveals con `IntersectionObserver` y cascada con tope,
+  marcador de texto cuyo ancho sigue al scroll, parallax de tres capas en el
+  hero, carrusel de catálogo con la tarjeta del frente agrandada, contadores de
+  cifras. **Cero dependencias**, un solo `requestAnimationFrame` compartido.
+- **Sin fotografías a propósito.** Todo lo visual es SVG y gradientes, porque
+  `LICENCIAS-PENDIENTES.md` sigue abierto. El retrato de Richard es un espacio
+  reservado con su leyenda.
+- Datos tomados de `ESTADO-ACTUAL.md`: WhatsApp, dirección, 4,8★/141 opiniones,
+  #1 en Tripadvisor, fundación 2015, ratio 1:3, rango US$190–208 de las OTAs.
+- Verificado en navegador: progreso monótono 0→1, altímetro 1.400→2.847 m,
+  59,7 fps durante el ascenso, 0 errores de consola, y con
+  `prefers-reduced-motion` la banda colapsa a 216 px y entrega la cumbre.
+- **Pendiente de decisión:** el precio directo está puesto como US$160 con
+  etiqueta «por confirmar» — es un marcador de maqueta, no una propuesta. El
+  precio canónico sigue bloqueado esperando a Richard.
+- **Pendiente:** la altitud 2.847 m del Villarrica está en la maqueta sin
+  marcar; `PROTOCOLO.md` pide marcar altitudes como `[POR CONFIRMAR]`.
+
+---
+
 ### [DOC] Claude Opus 5, 2026-10-27 (c)
 
 **Archivos modificados:** `claude/sistema/architecture/flujos.md`
