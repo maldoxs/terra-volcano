@@ -16,8 +16,8 @@ window.TV_CONTENIDO = {
       "accent": "#3A7CA5",
       "scroll": 1.6,
       "linger": 0.42,
-      "still": "assets/stills/lago.jpg",
-      "clip": "assets/vid/lago.mp4",
+      "still": "../media/stills/lago.jpg",
+      "clip": "../media/vid/lago.mp4",
       "label": {
         "es": "El lago",
         "en": "The lake"
@@ -50,8 +50,8 @@ window.TV_CONTENIDO = {
       "accent": "#F2EDE6",
       "scroll": 1.6,
       "linger": 0.4,
-      "still": "assets/stills/ascenso.jpg",
-      "clip": "assets/vid/ascenso.mp4",
+      "still": "../media/stills/ascenso.jpg",
+      "clip": "../media/vid/ascenso.mp4",
       "label": {
         "es": "El ascenso",
         "en": "The climb"
@@ -84,8 +84,8 @@ window.TV_CONTENIDO = {
       "accent": "#D64A1E",
       "scroll": 1.8,
       "linger": 0.48,
-      "still": "assets/stills/crater.jpg",
-      "clip": "assets/vid/crater.mp4",
+      "still": "../media/stills/crater.jpg",
+      "clip": "../media/vid/crater.mp4",
       "label": {
         "es": "El cráter",
         "en": "The crater"
@@ -116,8 +116,8 @@ window.TV_CONTENIDO = {
       "accent": "#E8B33C",
       "scroll": 1.9,
       "linger": 0.5,
-      "still": "assets/stills/base.jpg",
-      "clip": "assets/vid/base.mp4",
+      "still": "../media/stills/base.jpg",
+      "clip": "../media/vid/base.mp4",
       "label": {
         "es": "Reservar",
         "en": "Book"

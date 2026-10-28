@@ -5,16 +5,14 @@ historial de cómo se llegó a cada hecho está en
 [`CAMBIOS.md`](CAMBIOS.md). El orden de trabajo está en
 [`../PLAN.md`](../PLAN.md); acá sólo van **hechos vigentes**.
 
-Última actualización: 2026-10-27
+Última actualización: 2026-10-28
 
 ## La agencia
 
 | Hecho | Estado |
 |---|---|
 | Razón social | Turismo Aventura Richard Díaz Suazo EIRL |
-| Dirección | Av. Bernardo O'Higgins 717, Local 4, Boulevard Patagonia, Pucón |
-| WhatsApp | **+56 9 8338 8317** — ✅ confirmado en su propio sitio |
-| Instagram / Facebook | `@terravolcano_pucon` · `/puconterravolcano/` |
+| WhatsApp, dirección, redes | → [`../datos/agencia.json`](../datos/agencia.json) · ✅ confirmados |
 | Google Business | ✅ 4,8 ★ con 141 opiniones, verificado el 2026-10-26 |
 | Tripadvisor | ✅ #1 en Pucón |
 | Fundación | 2015, por Richard Díaz, escalador chileno. Family-run |
@@ -58,6 +56,22 @@ canyoning, termas, Andean Lakes.
 
 → Detalle en [`sistema/architecture/modelo-datos.md`](sistema/architecture/modelo-datos.md)
 
+## El sitio público
+
+| Hecho | Estado |
+|---|---|
+| Stack | ✅ Vue 3 con `<script setup>` + Vite, en [`../sitio/`](../sitio/) |
+| Dependencias de animación | ✅ Ninguna. CSS, SVG, IntersectionObserver y un rAF compartido |
+| Home | ✅ Siete secciones. Pieza central: el ascenso atado al scroll |
+| Datos de la agencia | ✅ Todos desde [`../datos/agencia.json`](../datos/agencia.json), fuente única |
+| Idiomas | ✅ ES/EN con detección automática, `<html lang>` sincronizado |
+| `prefers-reduced-motion` | ✅ Apaga el movimiento y colapsa la banda del ascenso |
+| Fotografías en el home | ⚠️ **Ninguna, a propósito.** Todo es SVG hasta resolver licencias |
+| Precio directo en el home | ⚠️ Se muestra «por confirmar», no un número. `agencia.json` lo tiene en `null` |
+| GitHub Pages | ⬜ El workflow ya compila y publica sólo `sitio/dist`. **Falta habilitar Pages en el repositorio** |
+
+→ Cómo levantarlo y cómo está armado: [`../sitio/README.md`](../sitio/README.md)
+
 ## La landing del Villarrica
 
 | Hecho | Estado |
@@ -68,8 +82,8 @@ canyoning, termas, Andean Lakes.
 | Resolución | 1280×720. El material de origen no da para 1080p honesto |
 | Idiomas | ES/EN con detección automática |
 | Fotos | ⚠️ **Ninguna es de Terra Volcano.** Pendientes de licencia |
-| GitHub Pages | ❌ No habilitado. El workflow existe y falla en `configure-pages` |
-| Dónde vive finalmente | ⬜ Sin decidir: home, landing de campaña o nada |
+| Dónde vive | ✅ Resuelto: se sirve en `/villarrica/` desde `sitio/public/villarrica/` |
+| Portada a Vue | ❌ No, y no hace falta: funciona con su propio motor de scrub |
 
 → Detalle en [`sitio/architecture/landing.md`](sitio/architecture/landing.md)
 

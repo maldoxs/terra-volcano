@@ -16,6 +16,57 @@ que se sobrescribe. Este archivo es log histórico puro y sólo crece.
 
 ---
 
+### [SITIO] [DOC] Claude Opus 5, 2026-10-28 (b)
+
+**Archivos modificados:** `sitio/` (nuevo, Vue 3), `datos/agencia.json` (nuevo),
+`datos/README.md` (nuevo), `sitio/README.md` (nuevo), `CLAUDE.md`,
+`claude/ESTADO-ACTUAL.md`, `.github/workflows/pages.yml`,
+`assets/` → `sitio/public/media/`, `index.html` → `sitio/public/villarrica/index.html`
+
+Reordenamiento del repositorio para que entre más gente a trabajar.
+
+- **Había tres `index.html`** (la landing, la maqueta y el Vue a medio hacer) y
+  ninguno era «el sitio». Ahora hay uno: `sitio/`, Vue 3 con `<script setup>`,
+  y es lo único que se publica. La landing del Villarrica se sirve tal cual en
+  `/villarrica/` desde `sitio/public/`, sin portarla a Vue.
+- **`datos/agencia.json` es la fuente única de verdad.** El WhatsApp estaba
+  escrito en 6 archivos y la dirección en 4; el rango de las OTAs en 10. El
+  sitio Vue ya no escribe ningún dato: los importa del JSON e interpola
+  `{marcadores}` en el copy. `ESTADO-ACTUAL.md` ahora enlaza en vez de copiar.
+  **Migración incompleta a propósito:** los análisis de `produccion/` siguen
+  citando el teléfono y la dirección dentro de su narrativa (son hallazgos
+  sobre el sitio de la agencia, no configuración), y
+  `sitio/public/media/js/textos.js` —la landing estática del Villarrica— aún
+  los tiene escritos. Quedan como pendiente de migrar.
+- **El workflow de Pages publicaba `path: .`**, es decir el repositorio entero:
+  `claude/` (la memoria), `produccion/` (los análisis de negocio) y los 4,8 MB
+  de `.claude/`. Ahora compila con Node 22 y publica sólo `sitio/dist`.
+- `assets/` pasó a `sitio/public/media/` con `git mv`, conservando historial.
+- Maqueta en HTML de ayer: se queda en `produccion/maqueta-home/` como
+  referencia de diseño. No se publica.
+- Verificado con el sitio compilado y servido: 19/19 reveals, altímetro
+  1.400→2.847 m monótono, carrusel avanzando, cambio ES/EN, `/villarrica/`
+  sin imágenes rotas y el video cargando, 0 errores de consola.
+- Tres defectos encontrados y corregidos en el camino: rutas `assets/` rotas en
+  `contenido.js` tras el movimiento, `<html lang>` que decía `es` mientras el
+  contenido se mostraba en inglés, y la geometría de la ruta del ascenso.
+
+**Pendientes que deja abiertos:**
+
+- 🔴 **Habilitar GitHub Pages en el repositorio.** El workflow ya está correcto;
+  `configure-pages` seguirá fallando hasta que se active en Settings → Pages.
+- 🟡 Quedan 6 `.jpg` huérfanos en `produccion/referencias/` (3 MB) que no
+  referencia ningún archivo; los `.webp` equivalentes sí se usan. No los borré:
+  no estaba en lo acordado.
+- 🟡 `.claude/skills/` son 4,8 MB y 188 archivos de herramientas versionadas.
+  Queda como decisión consciente, sin tocar.
+- 🟡 Los 16 MB de `.mp4` siguen versionados en git. `.git` ya pesa 23 MB y cada
+  regeneración de un clip deja la versión vieja adentro para siempre.
+- 🟡 Las altitudes del catálogo están marcadas `altitudConfirmada:false` en
+  `agencia.json`, como pide el `PROTOCOLO.md`.
+
+---
+
 ### [SITIO] Claude Opus 5, 2026-10-28
 
 **Archivos modificados:** `produccion/maqueta-home/index.html` (nuevo, 44 KB)

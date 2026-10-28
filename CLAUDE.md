@@ -20,8 +20,11 @@ la siguiente sesión no sabe qué se hizo y duplica trabajo.
 
 ## Reglas
 
-- **Un dato, un solo lugar.** Si un hecho ya está escrito, enlázalo, no lo
-  copies. Dos archivos con el mismo número y uno que cambia = el otro miente.
+- **Un dato, un solo lugar.** Todo dato de la agencia —teléfono, dirección,
+  cifras, precios, catálogo— vive en [`datos/agencia.json`](datos/agencia.json)
+  y en ningún otro archivo. El código lo importa; la documentación lo **enlaza**,
+  no lo copia. Dos archivos con el mismo número y uno que cambia = el otro
+  miente en silencio.
 - **`ESTADO-ACTUAL.md` se sobrescribe en el lugar**, nunca se le agrega como
   log. El historial va en `CAMBIOS.md`.
 - **Nada de datos inventados.** Precios, teléfonos y cifras de la agencia van
@@ -37,13 +40,29 @@ la siguiente sesión no sabe qué se hizo y duplica trabajo.
   su *prompt* o se saca un pantallazo, y la skill lo escribe en Vue o en
   HTML/CSS puro. **No instalar el CLI de 21st**: genera React + shadcn, que no
   es el stack de este sitio. Para paleta y tipografía, `ui-ux-pro-max`.
+- **El stack del sitio es Vue 3 con `<script setup>` (Composition API) y Vite.**
+  Sin librerías de animación: el movimiento se hace con CSS, SVG,
+  `IntersectionObserver` y un único `requestAnimationFrame` compartido
+  (`src/composables/useScrollRaf.js`). Antes de agregar una dependencia de
+  animación, hay que justificar qué hace que no se pueda hacer así.
+- **Una sola curva de aceleración** (`--ease` en `src/estilos/base.css`) para
+  todo el sitio. Es lo que hace que las piezas se sientan parte de lo mismo.
 
 ## Estructura
 
 ```
 PLAN.md                  el plan por fases — puerta de entrada al trabajo
-claude/                  la memoria del proyecto (este vault)
-produccion/              análisis del negocio y diseño de la landing
+datos/agencia.json       LA FUENTE ÚNICA DE VERDAD de todo dato de la agencia
+claude/                  la memoria del proyecto (este vault) — no se publica
+sitio/                   el sitio público, Vue 3 + Vite — lo ÚNICO que se publica
+  src/componentes/         un componente por sección
+  src/composables/         lógica reutilizable (scroll, idioma)
+  src/directivas/          v-revelar, v-marcador
+  public/media/            videos y fotos
+  public/villarrica/       la landing del Villarrica, estática, en /villarrica/
 sistema/                 el prototipo del registro de pasajeros + schema.sql
-assets/, index.html      la landing del Villarrica
+produccion/              análisis del negocio y material de trabajo — no se publica
 ```
+
+El sitio se levanta con `cd sitio && npm install && npm run dev`.
+GitHub Pages publica **sólo `sitio/dist`**, no la raíz del repositorio.
