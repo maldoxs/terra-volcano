@@ -4,7 +4,7 @@
 De acá salen, por generación, dos cosas que de otro modo se desincronizan:
 
   1. produccion/prompts/*.txt  — los prompts, por si algún día se genera con AI
-  2. assets/js/contenido.js    — el contenido bilingüe que consume el motor
+  2. sitio/public/media/js/contenido.js — el contenido bilingüe del motor
 
 Editar acá y correr `python3 produccion/escenas.py`. Nunca editar la salida.
 
@@ -174,8 +174,10 @@ def escribir_prompts():
 def escribir_contenido():
     secciones = [{
         "id": e["id"], "accent": e["acento"], "scroll": e["scroll"], "linger": e["linger"],
-        "still": f"assets/stills/{e['id']}.jpg",
-        "clip":  f"assets/vid/{e['id']}.mp4",
+        # Rutas relativas a sitio/public/villarrica/, que es desde donde se
+        # sirve la landing. Si la landing cambia de carpeta, cambian acá.
+        "still": f"../media/stills/{e['id']}.jpg",
+        "clip":  f"../media/vid/{e['id']}.mp4",
         "label": e["label"], "copy": e["copy"],
     } for e in ESCENAS]
 
@@ -183,7 +185,7 @@ def escribir_contenido():
              # Arquitectura A: sin conectores. Los tramos SON el recorrido.
              "conectores": [], "paleta": PALETA}
 
-    destino = RAIZ / "assets" / "js" / "contenido.js"
+    destino = RAIZ / "sitio" / "public" / "media" / "js" / "contenido.js"
     destino.parent.mkdir(parents=True, exist_ok=True)
     destino.write_text(
         "/* GENERADO por produccion/escenas.py — no editar a mano. */\n"

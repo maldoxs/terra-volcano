@@ -7,7 +7,7 @@ de las páginas scroll-through de Apple: el video está pre-renderizado, el scro
 solo mueve el tiempo.
 
 Cuando haya metraje de drone real —que es el objetivo— se reemplazan los .mp4
-de assets/vid/ con los mismos nombres y la página no cambia una línea.
+de sitio/public/media/vid/ con los mismos nombres y la página no cambia una línea.
 
 Uso:  python3 produccion/generar_clips.py
 """
@@ -73,7 +73,8 @@ def ff(args):
 
 
 def main():
-    sd, vd = RAIZ / "assets" / "stills", RAIZ / "assets" / "vid"
+    sd = RAIZ / "sitio" / "public" / "media" / "stills"
+    vd = RAIZ / "sitio" / "public" / "media" / "vid"
     tmp = RAIZ / "produccion" / ".tmp"
     for p in (sd, vd, tmp):
         p.mkdir(parents=True, exist_ok=True)

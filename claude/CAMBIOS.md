@@ -16,6 +16,41 @@ que se sobrescribe. Este archivo es log histórico puro y sólo crece.
 
 ---
 
+### [SITIO] [DOC] Claude Opus 5, 2026-10-28 (c)
+
+**Archivos modificados:** `produccion/escenas.py` (L7, L177-180, L186),
+`produccion/generar_clips.py` (L10, L76), `produccion/referencias/*.jpg` (borrados)
+
+Limpieza y reparación de lo que el reordenamiento anterior dejó roto.
+
+- 🔴 **`escenas.py` y `generar_clips.py` apuntaban a `assets/`**, que dejó de
+  existir con el movimiento a `sitio/public/media/`. Correr `escenas.py` creaba
+  una carpeta `assets/` fantasma y escribía ahí el `contenido.js`, en vez de en
+  el que usa la landing. Ambos scripts ya apuntan a la ubicación nueva.
+- 🔴 **Yo había editado `contenido.js` a mano con `sed`**, y ese archivo es
+  salida generada: su propia cabecera dice «nunca editar la salida». La próxima
+  regeneración habría revertido la corrección y roto las imágenes de nuevo.
+  Ahora la corrección vive en el generador, y regenerar produce exactamente lo
+  que está commiteado.
+- Borrados los 6 `.jpg` de `produccion/referencias/` (2,9 MB). Verificado antes
+  de borrar: `FUENTES` en `generar_clips.py` lee **sólo** los `.webp`, y ningún
+  otro archivo los menciona. Siguen en el historial de git si hicieran falta.
+- Versionado: 26 MB → 23 MB, 296 → 290 archivos.
+
+**Lo que NO se tocó, y por qué:**
+
+- `.claude/skills/` (4,6 MB, 188 archivos): **no está muerto.** `CLAUDE.md`
+  nombra `screenshot-to-code` y `ui-ux-pro-max` como el flujo de diseño del
+  proyecto. Quitarlas rompería el procedimiento documentado.
+- `produccion/prompts/*.txt`: son **salida generada** por `escenas.py`, que los
+  reescribe en cada corrida. Borrarlos sin cambiar el generador no sirve de
+  nada: vuelven solos.
+- Los 16 MB de `.mp4`: siguen versionados. Reescribir el historial para sacarlos
+  es justo lo que no conviene hacer ahora que entra más gente — invalidaría el
+  clon de todos. Si se decide, se hace antes de que el equipo crezca.
+
+---
+
 ### [SITIO] [DOC] Claude Opus 5, 2026-10-28 (b)
 
 **Archivos modificados:** `sitio/` (nuevo, Vue 3), `datos/agencia.json` (nuevo),
